@@ -1,0 +1,24 @@
+{
+  "name": "css-you-should-know",
+  "version": "1.0.0",
+  "description": "learn css by yourself",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "npm run docs:deploy",
+    "docs": "cd docs && gitbook install && gitbook serve",
+    "docs:deploy": "cd docs && ./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jirengu/css-you-should-know.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jirengu/css-you-should-know/issues"
+  },
+  "homepage": "https://github.com/jirengu/css-you-should-know#readme"
+}
