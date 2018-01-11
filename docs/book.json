@@ -1,0 +1,20 @@
+{
+  "title": "css you should know",
+  "gitbook": ">3.0.0",
+  "plugins": ["edit-link", "prism", "theme-vuejs", "-fontsettings", "-highlight", "github"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/jirengu/css-you-should-know/tree/master/docs",
+      "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/jirengu/css-you-should-know/"
+    }
+  },
+  "links": {
+    "sharing": {
+      "facebook": false,
+      "twitter": false
+    }
+  }
+}
