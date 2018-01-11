@@ -1,4 +1,4 @@
 .DS_Store
-node_modeles
+node_modules
 docs/_book
 *.log
