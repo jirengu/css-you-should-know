@@ -1,0 +1,628 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CSS 自定义属性 · css you should know</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Grid 布局
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="a-complete-guide-css-grid-layout.html">
+            
+                <a href="a-complete-guide-css-grid-layout.html">
+            
+                    
+                    CSS Grid 布局完整指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="building-a-home-page-with-grid.html">
+            
+                <a href="building-a-home-page-with-grid.html">
+            
+                    
+                    使用 Grid 布局构建网站首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Flex 布局
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="a-guild-to-flexbox.html">
+            
+                <a href="a-guild-to-flexbox.html">
+            
+                    
+                    Flexbox 学习指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    自定义属性
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="css-custom-properties-the-basics.html">
+            
+                <a href="css-custom-properties-the-basics.html">
+            
+                    
+                    CSS 自定义属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >CSS 自定义属性</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="css-custom-properties---the-basics">CSS Custom Properties - The Basics</h1>
+<blockquote>
+<p><a href="http://sgom.es/posts/2017-01-27-css-custom-properties-the-basics/" target="_blank">This article</a> was written by S&#xE9;rgio</p>
+</blockquote>
+<p><em>This is the first in a series of blog posts on CSS Custom Properties. Here I introduce the basics of what they are and how to use them. Stay tuned for the next posts!</em></p>
+<p>So you&#x2019;ve heard about <a href="http://drafts.csswg.org/css-variables/" target="_blank">CSS Custom Properties</a> (also known as CSS Variables) and you might have an idea of what they are, perhaps from <a href="http://developers.google.com/web/updates/2016/02/css-variables-why-should-you-care" target="_blank">the developers.google.com post</a> when they landed in Chrome. You&#x2019;re not quite clear on the specifics or browser support, you haven&#x2019;t heard anything about best practices, and you don&#x2019;t know how they&#x2019;re better than variables in Sass or Less, though. Well, read on!</p>
+<h2 id="browser-support">Browser Support</h2>
+<p>First things first: where are CSS Custom Properties available? Browser support is actually pretty good as of writing: Chrome, Opera, Firefox and Safari ship with full support, and <a href="http://developer.microsoft.com/en-us/microsoft-edge/platform/status/csscustompropertiesakacssvariables/" target="_blank">Custom Properties are in development for Edge</a>. To keep up to date with browser support, see <a href="http://caniuse.com/#feat=css-variables" target="_blank">Can I use CSS Variables (Custom Properties)</a>?</p>
+<p>This means that CSS Custom Properties are definitely ready for use as a progressive enhancement right now, and pretty soon it will be possible to use them as a hard dependency. Be sure to check <a href="#appendix-filling-in-the-gaps-with-preprocessing">the appendix at the end of the article</a> for information on preprocessors, too.</p>
+<h2 id="set-a-value-any-value">Set a value, any value</h2>
+<p>So what are custom properties anyway? Simply put, a custom property is a CSS property that can be named and used by the developer. Unlike built-in properties like color or position, which have specific meanings for the browser, a custom property has no meaning beyond the one you decide for it. You set it exactly the same way you would a regular property:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.foo</span>{
+
+<span class="hljs-attribute">color</span>:red;
+
+<span class="hljs-attribute">--theme-color</span>:gray;
+
+}
+</code></pre>
+<p>Browsers tell normal properties and custom ones apart by simply looking at the name: custom properties have a &#x2018;<code>--</code>&#x2019; prefix. Custom properties are different, in that the browser engine doesn&#x2019;t do anything with a new custom property you&#x2019;ve set; while setting <code>color</code> changes the text color for elements matching that selector, setting <code>--theme-color</code> doesn&#x2019;t have any immediate effect.</p>
+<p>You can use CSS custom properties for storing any <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/Value_definition_syntax" target="_blank">valid CSS value</a>:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.foo</span>{
+
+<span class="hljs-attribute">--theme-color</span>:blue;
+
+<span class="hljs-attribute">--spacer-width</span>:<span class="hljs-number">8px</span>;
+
+<span class="hljs-attribute">--favorite-number</span>:<span class="hljs-number">3</span>;
+
+<span class="hljs-attribute">--greeting</span>:<span class="hljs-string">&quot;Hey, what&apos;s up?&quot;</span>;
+
+<span class="hljs-attribute">--reusable-shadow</span>:<span class="hljs-built_in">03px1px-2pxrgba</span>(0, 0, 0, 0.85);
+
+}
+</code></pre>
+<h2 id="use-it-and-reuse-it">Use it and reuse it</h2>
+<p>Custom properties wouldn&#x2019;t be of much use if you could only set values. At the very least, you need to be able to get those values back!</p>
+<p>For that, we&#x2019;ve got the <code>var()</code> function:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.button</span>{
+
+<span class="hljs-attribute">background-color</span>:<span class="hljs-built_in">var</span>(--theme-color);
+
+}
+</code></pre>
+<p>Here, we&#x2019;re setting the background color of button to the value of the <code>--theme-color</code> custom property. This may not seem like a huge improvement to hard-coding the value, but the benefits start to become clearer once you realize you can use that <code>--theme-color</code> across many selectors and properties:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.button</span>{
+
+<span class="hljs-attribute">background-color</span>:<span class="hljs-built_in">var</span>(--theme-color);
+
+}
+
+<span class="hljs-selector-class">.title</span>{
+
+<span class="hljs-attribute">color</span>:<span class="hljs-built_in">var</span>(--theme-color);
+
+}
+
+<span class="hljs-selector-class">.image-grid</span> &gt; <span class="hljs-selector-class">.image</span>{
+
+<span class="hljs-attribute">border-color</span>:<span class="hljs-built_in">var</span>(--theme-color);
+
+}
+</code></pre>
+<h3 id="default-values">Default values</h3>
+<p>What if <code>--theme-color</code> isn&#x2019;t set anywhere? <code>var()</code> can take an optional second parameter, to use as the default:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.button</span>{
+
+<span class="hljs-attribute">background-color</span>:<span class="hljs-built_in">var</span>(--theme-color,gray);
+
+}
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> If you want to fall back to another custom property, the correct syntax is <code>background-color: var(--theme-color, var(--fallback-color))</code>;</p>
+</blockquote>
+<p>In fact, it&#x2019;s good practice to always set a default value, especially when building <a href="http://webcomponents.org/" target="_blank">web components</a>. And to make things as bulletproof as possible, you can even add fallback support for browsers that don&#x2019;t understand custom properties:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.button</span>{
+
+<span class="hljs-attribute">background-color</span>:gray;
+
+<span class="hljs-attribute">background-color</span>:<span class="hljs-built_in">var</span>(--theme-color,gray);
+
+}
+</code></pre>
+<h2 id="scoping-and-cascading">Scoping and cascading</h2>
+<p>So where should you set the values, before using them? It turns out that custom properties follow standard scoping and cascading rules, so you already know exactly how things will work!</p>
+<p>For something like <code>--theme-color</code>, for example, you might want to use the global scope, so that the value is available everywhere. The easiest way of doing this is using the <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/:root" target="_blank"><code>:root</code> pseudo-class</a>:</p>
+<pre><code class="lang-css"><span class="hljs-selector-pseudo">:root</span>{
+
+<span class="hljs-attribute">--theme-color</span>:gray;
+
+}
+</code></pre>
+<p>This makes the value available anywhere on the document, so all your buttons, titles and image grids can use it.</p>
+<p>But what if you wanted different sections on your website to have different theme colors? Well, you do that the exact same way you would before; only now you&#x2019;re setting a single custom property, rather than changing every property that makes use of it:</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">section</span><span class="hljs-selector-class">.about</span>{
+
+<span class="hljs-attribute">--theme-color</span>:darkblue;
+
+}
+
+<span class="hljs-selector-tag">section</span><span class="hljs-selector-class">.contacts</span>{
+
+<span class="hljs-attribute">--theme-color</span>:darkred;
+
+}
+
+<span class="hljs-selector-tag">section</span><span class="hljs-selector-class">.news</span>{
+
+<span class="hljs-attribute">--theme-color</span>:teal;
+
+}
+</code></pre>
+<p>Oh, and of course, you can always add exceptions by making selectors as complex as you need:</p>
+<pre><code class="lang-css"><span class="hljs-selector-tag">section</span><span class="hljs-selector-class">.news</span> &gt; <span class="hljs-selector-class">.sidenote</span>{
+
+<span class="hljs-attribute">--theme-color</span>:gray;
+
+}
+</code></pre>
+<h2 id="css-math">CSS Math</h2>
+<p>You may be aware of the <a href="http://developer.mozilla.org/en-US/docs/Web/CSS/calc" target="_blank"><code>calc()</code> function</a> in CSS, which is often used to combine different types of units:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.child</span>{
+
+<span class="hljs-attribute">width</span>:<span class="hljs-built_in">calc</span>(100% - 16px);
+
+}
+</code></pre>
+<p>This calculation actually happens at runtime, on the browser, converting everything to a final pixel size to display, depending on how wide the parent currently is.</p>
+<p>Well, <code>calc()</code> now has another trick up its sleeve: it can be used with custom properties too! In fact, that was an important consideration in the Custom Properties spec, because of how useful the combination can be:</p>
+<pre><code class="lang-css"><span class="hljs-selector-pseudo">:root</span>{
+
+<span class="hljs-attribute">--base-size</span>:<span class="hljs-number">4px</span>;
+
+}
+
+<span class="hljs-selector-class">.title</span>{
+
+<span class="hljs-attribute">text-size</span>:<span class="hljs-built_in">calc</span>(5 * var(--base-size));
+
+}
+
+<span class="hljs-selector-class">.body</span>{
+
+<span class="hljs-attribute">text-size</span>:<span class="hljs-built_in">calc</span>(3 * var(--base-size));
+
+}
+</code></pre>
+<p>You can even combine multiple unit types, as long as the final result makes sense:</p>
+<pre><code class="lang-css"><span class="hljs-selector-pseudo">:root</span>{
+
+<span class="hljs-attribute">--base-size</span>:<span class="hljs-number">4px</span>;
+
+<span class="hljs-attribute">--title-multiplier</span>:<span class="hljs-number">5</span>;
+
+<span class="hljs-attribute">--body-multiplier</span>:<span class="hljs-number">3</span>;
+
+}
+
+<span class="hljs-selector-class">.title</span>{
+
+<span class="hljs-attribute">text-size</span>:<span class="hljs-built_in">calc</span>(var(--title-multiplier) * <span class="hljs-built_in">var</span>(--base-size));
+
+}
+
+<span class="hljs-selector-class">.body</span>{
+
+<span class="hljs-attribute">text-size</span>:<span class="hljs-built_in">calc</span>(var(--body-multiplier) * <span class="hljs-built_in">var</span>(--base-size));
+
+}
+</code></pre>
+<h2 id="a-bridge-between-css-and-javascript">A bridge between CSS and JavaScript</h2>
+<p>One of the important things to consider when comparing to variables in preprocessors like Sass, Less or PostCSS, is that custom properties are actual entities in the browser. This means that they are dynamic things that you can modify at runtime, as opposed to a convenience feature for generating static output ahead of time.</p>
+<p>You can access custom properties through the standard <code>getPropertyValue</code> and <code>setProperty</code> methods of <a href="http://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration" target="_blank">any element&#x2019;s style property</a>:</p>
+<pre><code class="lang-javascript">conststyles=
+
+getComputedStyle(<span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.foo&apos;</span>));
+
+<span class="hljs-comment">// Read value. Be sure to trim to remove whitespace.</span>
+
+constoldColor=styles.getPropertyValue(<span class="hljs-string">&apos;--color&apos;</span>).trim();
+
+<span class="hljs-comment">// Write value.</span>
+
+foo.style.setProperty(<span class="hljs-string">&apos;--color&apos;</span>,<span class="hljs-string">&apos;green&apos;</span>);
+</code></pre>
+<p>Changing the value of a custom property in this way will immediately affect any CSS property that depends on it, just as if you had changed that property directly. This means it&#x2019;s a great way to easily apply script-driven changes across many elements.</p>
+<p>We will cover this topic in further detail in <a href="posts/2017-02-10-bridging-css-and-js-with-custom-properties">another article, where we also discuss best practices around this technique</a>.</p>
+<h2 id="appendix-filling-in-the-gaps-with-preprocessing">Appendix: Filling in the Gaps With Preprocessing</h2>
+<p>If you&#x2019;d like to get started using CSS Custom Properties right now, but need to support browsers that don&#x2019;t have access to them, one way to fill in the gaps is to use a preprocessor such as <a href="http://postcss.org/" target="_blank">PostCSS</a>.</p>
+<p>This will work for some of the more basic uses in organising and <a href="http://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY</a>-ing up your CSS, but bear in mind that it does not allow for making use of some of the more dynamic functionality, such as changing custom property values from JavaScript.</p>
+<p>Here&#x2019;s a quick overview of some of the functionality and whether or not it&#x2019;s supported in a couple of popular preprocessor plugins:</p>
+<table id="table1" style="font-size: 0.9rem">
+  <tbody><tr>
+    <th>Functionality</th>
+    <th>Code sample</th>
+    <th><a href="http://github.com/postcss/postcss-custom-properties" target="_blank"><code>postcss-custom-properties</code></a></th>
+    <th><a href="http://github.com/MadLittleMods/postcss-css-variables" target="_blank"><code>postcss-css-variables</code></a></th>
+  </tr>
+
+  <tr>
+    <td>Definition in the <code>:root</code> scope</td>
+    <td><pre>:root {
+  --color: red;
+}
+
+</pre>
+    </td>
+    <td colspan="2"><b>Yes.</b></td>
+  </tr>
+
+  <tr>
+    <td>Definition in other scopes</td>
+    <td><pre>body {
+  --color: red;
+}
+
+</pre>
+    </td>
+    <td><b>No.</b></td>
+    <td><b>Yes.</b><br><a href="http://github.com/MadLittleMods/postcss-css-variables#caveats" target="_blank">May result in incorrect behaviour</a></td>
+  </tr>
+
+  <tr>
+    <td>Simple retrieval</td>
+    <td><pre>.foo {
+  color: var(--color);
+}
+
+</pre>
+    </td>
+    <td colspan="2"><b>Yes.</b></td>
+  </tr>
+
+  <tr>
+    <td>Retrieval with fallback value</td>
+    <td><pre>.foo {
+  color: var(--color, red);
+}
+
+</pre>
+    </td>
+    <td colspan="2"><b>Yes.</b></td>
+  </tr>
+
+  <tr>
+    <td>Definition inside at&#x2011;rule</td>
+    <td><pre>@media (min-size: 600px) {
+  :root {
+    --color: red;
+  }
+}
+
+</pre>
+    </td>
+    <td><b>No.</b></td>
+    <td><b>Yes.</b><br><a href="http://github.com/MadLittleMods/postcss-css-variables/issues/30" target="_blank">May result in incorrect behaviour</a></td>
+  </tr>
+
+  <tr>
+    <td>Definition inside pseudo&#x2011;selector</td>
+    <td><pre>.foo:hover {
+  --color: red;
+}
+
+</pre>
+    </td>
+    <td><b>No.</b></td>
+    <td><b>Yes.</b><br><a href="http://github.com/MadLittleMods/postcss-css-variables#caveats" target="_blank">May result in incorrect behaviour</a></td>
+  </tr>
+
+  <tr>
+    <td>Calculations</td>
+    <td><pre>.foo {
+  text-size: calc(2 *
+    var(--size));
+}
+
+</pre>
+    </td>
+    <td colspan="2"><b>Yes</b>, with <a href="http://github.com/postcss/postcss-calc" target="_blank">postcss-calc</a>.</td>
+  </tr>
+
+  <tr>
+    <td>Changing a custom property value from Javascript</td>
+    <td><pre>el.style.setProperty(
+  &apos;--color&apos;, &apos;red&apos;);
+  </pre>
+    </td>
+    <td colspan="2"><b>No.</b> Impossible to achieve with preprocessors.</td>
+  </tr>
+</tbody></table>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CSS 自定义属性","level":"1.4.1","depth":2,"previous":{"title":"自定义属性","level":"1.4","depth":1,"ref":"","articles":[{"title":"CSS 自定义属性","level":"1.4.1","depth":2,"path":"css-custom-properties-the-basics.md","ref":"css-custom-properties-the-basics.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs-2","codepen","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/jirengu/css-you-should-know/"},"search":{},"codepen":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"highlight":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/jirengu/css-you-should-know/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"css you should know","language":"zh-cn","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"css-custom-properties-the-basics.md","mtime":"2018-12-19T03:57:01.182Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-19T04:00:31.594Z"},"basePath":".","book":{"language":"zh-cn"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codepen/embed-codepen.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

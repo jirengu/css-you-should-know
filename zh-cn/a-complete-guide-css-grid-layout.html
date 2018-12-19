@@ -1,0 +1,1088 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>CSS Grid 布局完整指南 · css you should know</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="building-a-home-page-with-grid.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Grid 布局
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="a-complete-guide-css-grid-layout.html">
+            
+                <a href="a-complete-guide-css-grid-layout.html">
+            
+                    
+                    CSS Grid 布局完整指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="building-a-home-page-with-grid.html">
+            
+                <a href="building-a-home-page-with-grid.html">
+            
+                    
+                    使用 Grid 布局构建网站首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Flex 布局
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="a-guild-to-flexbox.html">
+            
+                <a href="a-guild-to-flexbox.html">
+            
+                    
+                    Flexbox 学习指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    自定义属性
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="css-custom-properties-the-basics.html">
+            
+                <a href="css-custom-properties-the-basics.html">
+            
+                    
+                    CSS 自定义属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >CSS Grid 布局完整指南</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="css-&#x7F51;&#x683C;&#x5E03;&#x5C40;&#x5B66;&#x4E60;&#x6307;&#x5357;">CSS &#x7F51;&#x683C;&#x5E03;&#x5C40;&#x5B66;&#x4E60;&#x6307;&#x5357;</h1>
+<p>CSS &#x7F51;&#x683C;&#x5E03;&#x5C40;(Grid Layout) &#x662F;CSS&#x4E2D;&#x6700;&#x5F3A;&#x5927;&#x7684;&#x5E03;&#x5C40;&#x7CFB;&#x7EDF;&#x3002; &#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x7CFB;&#x7EDF;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x5B83;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5904;&#x7406;&#x5217;&#x548C;&#x884C;&#xFF0C;&#x4E0D;&#x50CF; <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a> &#x90A3;&#x6837;&#x4E3B;&#x8981;&#x662F;&#x4E00;&#x7EF4;&#x7CFB;&#x7EDF;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C06;CSS&#x89C4;&#x5219;&#x5E94;&#x7528;&#x4E8E;&#x7236;&#x5143;&#x7D20;&#xFF08;&#x6210;&#x4E3A;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#xFF09;&#x548C;&#x8BE5;&#x5143;&#x7D20;&#x7684;&#x5B50;&#x5143;&#x7D20;&#xFF08;&#x7F51;&#x683C;&#x5143;&#x7D20;&#xFF09;&#xFF0C;&#x6765;&#x4F7F;&#x7528;&#x7F51;&#x683C;&#x5E03;&#x5C40;&#x3002;</p>
+<blockquote>
+<p><a href="http://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">&#x672C;&#x6587;</a>&#x51FA;&#x81EA;&#x4E8E; <a href="http://chris.house/blog/a-complete-guide-css-grid-layout/" target="_blank">Chris House</a> &#x7684;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#xFF0C;&#x7531;<a href="http://jirengu.com" target="_blank">&#x9965;&#x4EBA;&#x8C37;</a> <a href="http://www.zhihu.com/people/jirengu-ruo-yu" target="_blank">&#x82E5;&#x611A;&#x8001;&#x5E08;</a>&#x7FFB;&#x8BD1;</p>
+</blockquote>
+<h2 id="&#x5F15;&#x8A00;">&#x5F15;&#x8A00;</h2>
+<p>CSS&#x7F51;&#x683C;&#x5E03;&#x5C40;&#xFF08;&#x53C8;&#x540D;&#x201C;&#x7F51;&#x683C;&#x201D;&#xFF09;&#x662F;&#x4E00;&#x4E2A;&#x4E8C;&#x7EF4;&#x7684;&#x57FA;&#x4E8E;&#x7F51;&#x683C;&#x7684;&#x5E03;&#x5C40;&#x7CFB;&#x7EDF;&#xFF0C;&#x5176;&#x76EE;&#x7684;&#x53EA;&#x5728;&#x4E8E;&#x5B8C;&#x5168;&#x6539;&#x53D8;&#x6211;&#x4EEC;&#x8BBE;&#x8BA1;&#x57FA;&#x4E8E;&#x7F51;&#x683C;&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#x3002; CSS&#x4E00;&#x76F4;&#x7528;&#x6765;&#x5E03;&#x5C40;&#x7F51;&#x9875;&#xFF0C;&#x4F46;&#x4E00;&#x76F4;&#x90FD;&#x4E0D;&#x5B8C;&#x7F8E;&#x3002; &#x4E00;&#x5F00;&#x59CB;&#x6211;&#x4EEC;&#x4F7F;&#x7528;table &#x505A;&#x5E03;&#x5C40;&#xFF0C;&#x7136;&#x540E;&#x8F6C;&#x5411;&#x6D6E;&#x52A8;&#x3001;&#x5B9A;&#x4F4D;&#x4EE5;&#x53CA;inline-block&#xFF0C;&#x4F46;&#x6240;&#x6709;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x672C;&#x8D28;&#x4E0A;&#x90FD;&#x662F; Hack &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#x9057;&#x6F0F;&#x4E86;&#x5F88;&#x591A;&#x91CD;&#x8981;&#x7684;&#x529F;&#x80FD;&#xFF08;&#x4F8B;&#x5982;&#x5782;&#x76F4;&#x5C45;&#x4E2D;&#xFF09;&#x3002; Flexbox&#x7684;&#x51FA;&#x73B0;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x89E3;&#x51B3;&#x4E86;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x7684;&#x76EE;&#x7684;&#x662F;&#x4E3A;&#x4E86;&#x66F4;&#x7B80;&#x5355;&#x7684;&#x4E00;&#x7EF4;&#x5E03;&#x5C40;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x590D;&#x6742;&#x7684;&#x4E8C;&#x7EF4;&#x5E03;&#x5C40;&#xFF08;Flexbox&#x548C;Grid&#x5B9E;&#x9645;&#x4E0A;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#x5F97;&#x5F88;&#x597D;&#xFF09;&#x3002; &#x53EA;&#x8981;&#x6211;&#x4EEC;&#x4E00;&#x76F4;&#x5728;&#x5236;&#x4F5C;&#x7F51;&#x7AD9;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x4E00;&#x76F4;&#x5728;&#x4E3A;&#x89E3;&#x51B3;&#x5E03;&#x5C40;&#x95EE;&#x9898;&#x4E0D;&#x65AD;&#x63A2;&#x7D22;&#xFF0C;
+&#x800C;Grid&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x4E3A;&#x89E3;&#x51B3;&#x5E03;&#x5C40;&#x95EE;&#x9898;&#x800C;&#x751F;&#x7684;CSS&#x6A21;&#x5757;&#x3002;</p>
+<p>&#x6709;&#x4E24;&#x4E2A;&#x4E1C;&#x897F;&#xFF0C;&#x542F;&#x53D1;&#x6211;&#x5199;&#x8FD9;&#x7BC7;&#x6307;&#x5357;&#x3002; &#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x96F7;&#x5207;&#x5C14;&#xB7;&#x5B89;&#x5FB7;&#x9C81;&#xFF08;Rachel Andrew&#xFF09;&#x7684;&#x4E66;<a href="http://abookapart.com/products/get-ready-for-css-grid-layout" target="_blank">&#x4E3A;CSS Grid&#x5E03;&#x5C40;&#x51C6;&#x5907;</a>&#x3002; &#x8FD9;&#x672C;&#x4E66;&#x5BF9;&#x7F51;&#x683C;&#x5E03;&#x5C40;&#x505A;&#x4E86;&#x5F7B;&#x5E95;&#x3001;&#x6E05;&#x6670;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x4E5F;&#x662F;&#x662F;&#x6574;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x6211;&#x5F3A;&#x70C8;&#x5EFA;&#x8BAE;&#x4F60;&#x8D2D;&#x4E70;&#x5E76;&#x9605;&#x8BFB;&#x4ED6;&#x7684;&#x4E66;&#x3002; &#x6211;&#x7684;&#x53E6;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7075;&#x611F;&#x662F;Chris Coyier&#x7684;<a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox&#x5B8C;&#x5168;&#x6307;&#x5357;</a>&#xFF0C;&#x5F53;&#x9700;&#x8981;&#x67E5;&#x9605; flexbox &#x7684;&#x4E00;&#x5207;&#x8D44;&#x6599;&#x65F6;&#x6211;&#x5C31;&#x4F1A;&#x627E;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x3002; &#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x5E2E;&#x52A9;&#x4E86;&#x5F88;&#x591A;&#x4EBA;&#x5B66;&#x4E60; Flex &#x5E03;&#x5C40;&#xFF0C;&#x4E5F;&#x662F; Google &#x4E0A;&#x641C;&#x7D22;&#x201C;flexbox&#x201D;&#x5173;&#x952E;&#x5B57;&#x6392;&#x540D;&#x7B2C;&#x4E00;&#x7684;&#x6587;&#x7AE0;&#x3002;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x4ED6;&#x7684;&#x6587;&#x7AE0;&#x548C;&#x6211;&#x7684;&#x5F88;&#x591A;&#x76F8;&#x4F3C;&#x4E4B;&#x5904;&#xFF0C;&#x6709;&#x6700;&#x597D;&#x7684;&#x8303;&#x4F8B;&#x5728;&#x90A3;&#x653E;&#x7740;&#x4E3A;&#x4EC0;&#x4E48;&#x54B1;&#x4E0D;&#x5077;&#x5E08;&#x5B66;&#x7740;&#x5199;&#x5462;&#xFF1F;</p>
+<p>&#x672C;&#x6307;&#x5357;&#x7684;&#x76EE;&#x7684;&#x662F;&#x4ECB;&#x7ECD;&#x7F51;&#x683C;&#x6982;&#x5FF5;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x5B58;&#x5728;&#x4E8E;&#x6700;&#x65B0;&#x7248;&#x672C;&#x7684;&#x89C4;&#x8303;&#x4E2D;&#x3002; &#x56E0;&#x6B64;&#x6211;&#x4E0D;&#x4F1A;&#x8986;&#x76D6;&#x8FC7;&#x65F6;&#x7684;IE&#x8BED;&#x6CD5;&#xFF0C;&#x800C;&#x4E14;&#x968F;&#x7740;&#x89C4;&#x8303;&#x7684;&#x6210;&#x719F;&#xFF0C;&#x6211;&#x4F1A;&#x5C3D;&#x6700;&#x5927;&#x52AA;&#x529B;&#x4FDD;&#x5B58;&#x66F4;&#x65B0;&#x672C;&#x6307;&#x5357;&#x3002;</p>
+<h2 id="&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x4EE5;&#x53CA;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x60C5;&#x51B5;">&#x57FA;&#x7840;&#x77E5;&#x8BC6;&#x4EE5;&#x53CA;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x60C5;&#x51B5;</h2>
+<p>&#x4E00;&#x5F00;&#x59CB;&#x4F60;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>display&#xFF1A;grid</code>&#x628A;&#x5BB9;&#x5668;&#x5143;&#x7D20;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x7F51;&#x683C;&#xFF0C;&#x4F7F;&#x7528;<code>grid-template-columns</code>&#x548C;<code>grid-template-rows</code>&#x8BBE;&#x7F6E;&#x5217;&#x548C;&#x884C;&#x5927;&#x5C0F;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;<code>grid-column</code> &#x548C; <code>grid-row</code>&#x628A;&#x5B83;&#x7684;&#x5B50;&#x5143;&#x7D20;&#x653E;&#x5165;&#x7F51;&#x683C;&#x3002; &#x4E0E;flexbox&#x7C7B;&#x4F3C;&#xFF0C;&#x7F51;&#x683C;&#x5B50;&#x5143;&#x7D20;&#x7684;&#x539F;&#x59CB;&#x987A;&#x5E8F;&#x4E0D;&#x91CD;&#x8981;&#x3002; &#x4F60;&#x7684;&#x53EF;&#x4EE5;&#x5728; CSS &#x91CC;&#x4EE5;&#x4EFB;&#x610F;&#x987A;&#x5E8F;&#x653E;&#x7F6E;&#x5B83;&#x4EEC;&#xFF0C;&#x8FD9;&#x4F7F;&#x5F97;&#x4F7F;&#x7528;&#x5A92;&#x4F53;&#x67E5;&#x8BE2;&#x91CD;&#x65B0;&#x6392;&#x5217;&#x7F51;&#x683C;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x3002; &#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x6574;&#x4E2A;&#x9875;&#x9762;&#x7684;&#x5E03;&#x5C40;&#xFF0C;&#x7136;&#x540E;&#x4E3A;&#x4E86;&#x9002;&#x5E94;&#x4E0D;&#x540C;&#x7684;&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;&#x5B8C;&#x5168;&#x91CD;&#x65B0;&#x6392;&#x5217;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x51E0;&#x884C;CSS&#x5C31;&#x80FD;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x9700;&#x6C42;&#x3002; &#x7F51;&#x683C;&#x662F;&#x6709;&#x53F2;&#x4EE5;&#x6765;&#x6700;&#x5F3A;&#x5927;&#x7684;CSS&#x6A21;&#x5757;&#x4E4B;&#x4E00;&#x3002;</p>
+<p>&#x622A;&#x81F3;2017&#x5E74;3&#x6708;&#xFF0C;&#x8BB8;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x539F;&#x751F;&#x7684;&#x3001;&#x4E0D;&#x52A0;&#x524D;&#x7F00;&#x7684;&#x5BF9;CSS Grid&#x7684;&#x652F;&#x6301;&#xFF0C;&#x6BD4;&#x5982; Chrome&#xFF08;&#x5305;&#x62EC;Android&#xFF09;&#xFF0C;Firefox&#xFF0C;Safari&#xFF08;&#x5305;&#x62EC;iOS&#xFF09;&#x548C;Opera&#x3002; &#x53E6;&#x4E00;&#x65B9;&#x9762;&#xFF0C;Internet Explorer 10&#x548C;11&#x652F;&#x6301;&#x5B83;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x8FC7;&#x65F6;&#x7684;&#x8BED;&#x6CD5;&#x3002; Edge&#x6D4F;&#x89C8;&#x5668;&#x5DF2;&#x7ECF;&#x5BA3;&#x5E03;&#x5C06;&#x652F;&#x6301;&#x6807;&#x51C6;&#x7684;Grid&#x8BED;&#x6CD5;&#xFF0C;&#x4F46;&#x6682;&#x672A;&#x652F;&#x6301;&#x3002;</p>
+<blockquote>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x7684;&#x8BE6;&#x7EC6;&#x6570;&#x636E;&#x53EF;&#x5728;<a href="http://caniuse.com/#feat=css-grid" target="_blank">Caniuse</a>&#x67E5;&#x770B;&#x3002;&#x5176;&#x4E2D;&#x91CC;&#x9762;&#x7684;&#x6570;&#x5B57;&#x8868;&#x793A;&#x8BE5;&#x7248;&#x672C;&#x4EE5;&#x4E0A;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;Grid&#x3002;</p>
+</blockquote>
+<h3 id="&#x684C;&#x9762;&#x6D4F;&#x89C8;&#x5668;">&#x684C;&#x9762;&#x6D4F;&#x89C8;&#x5668;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Chrome</th>
+<th style="text-align:center">Opera</th>
+<th style="text-align:center">Firefox</th>
+<th style="text-align:center">IE</th>
+<th style="text-align:center">Edge</th>
+<th style="text-align:center">Safari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">57</td>
+<td style="text-align:center">44</td>
+<td style="text-align:center">52</td>
+<td style="text-align:center">11*</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">10.1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x79FB;&#x52A8;&#x7AEF;--&#x5E73;&#x677F;">&#x79FB;&#x52A8;&#x7AEF; / &#x5E73;&#x677F;</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">iOS Safari</th>
+<th style="text-align:center">Opera Mobile</th>
+<th style="text-align:center">Opera Mini</th>
+<th style="text-align:center">Android</th>
+<th style="text-align:center">Android Chrome</th>
+<th style="text-align:center">Android Firefox</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10.3</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">No</td>
+<td style="text-align:center">62</td>
+<td style="text-align:center">62</td>
+<td style="text-align:center">57</td>
+</tr>
+</tbody>
+</table>
+<p>&#x9664;&#x4E86;&#x5FAE;&#x8F6F;&#x4E4B;&#x5916;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x5236;&#x9020;&#x5546;&#x5728; Grid &#x89C4;&#x8303;&#x5B8C;&#x5168;&#x843D;&#x5730;&#x4EE5;&#x524D;&#x4F3C;&#x4E4E;&#x5E76;&#x6CA1;&#x6709;&#x653E;&#x624B;&#x8BA9; Gird &#x91CE;&#x751F;&#x4E5F;&#x957F;&#x7684;&#x6253;&#x7B97;&#x3002; &#x8FD9;&#x662F;&#x4E00;&#x4EF6;&#x597D;&#x4E8B;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x53BB;&#x5B66;&#x4E60;&#x5404;&#x79CD;&#x6D4F;&#x89C8;&#x5668;&#x517C;&#x5BB9;&#x7248;&#x672C;&#x7684;&#x65E7;&#x8BED;&#x6CD5;&#x3002;</p>
+<p>&#x5728;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x4E2D;&#x4F7F;&#x7528;Grid&#x53EA;&#x662F;&#x65F6;&#x95F4;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x73B0;&#x5728;&#x662F;&#x6211;&#x4EEC;&#x8BE5;&#x5B66;&#x4E60;&#x7684;&#x65F6;&#x5019;&#x4E86;&#x3002;</p>
+<h2 id="&#x91CD;&#x8981;&#x672F;&#x8BED;">&#x91CD;&#x8981;&#x672F;&#x8BED;</h2>
+<p>&#x5728;&#x6DF1;&#x5165;&#x4E86;&#x89E3;&#x7F51;&#x683C;&#x7684;&#x6982;&#x5FF5;&#x4E4B;&#x524D;&#xFF0C;&#x7406;&#x89E3;&#x672F;&#x8BED;&#x662F;&#x5F88;&#x91CD;&#x8981;&#x7684;&#x3002; &#x7531;&#x4E8E;&#x8FD9;&#x91CC;&#x6240;&#x6D89;&#x53CA;&#x7684;&#x672F;&#x8BED;&#x5728;&#x6982;&#x5FF5;&#x4E0A;&#x90FD;&#x662F;&#x76F8;&#x4F3C;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5148;&#x8BB0;&#x4F4F;&#x5B83;&#x4EEC;&#x5728;&#x7F51;&#x683C;&#x89C4;&#x8303;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x542B;&#x4E49;&#xFF0C;&#x5219;&#x5F88;&#x5BB9;&#x6613;&#x5C06;&#x5B83;&#x4EEC;&#x5F7C;&#x6B64;&#x6DF7;&#x6DC6;&#x3002; &#x4F46;&#x662F;&#x4E0D;&#x7528;&#x592A;&#x62C5;&#x5FC3;&#xFF0C;&#x8FD9;&#x4E9B;&#x672F;&#x8BED;&#x5E76;&#x4E0D;&#x591A;&#x3002;</p>
+<h3 id="grid-container">Grid Container</h3>
+<p>&#x8BBE;&#x7F6E;&#x4E86; <code>display: gird</code> &#x7684;&#x5143;&#x7D20;&#x3002; &#x8FD9;&#x662F;&#x6240;&#x6709; grid item &#x7684;&#x76F4;&#x63A5;&#x7236;&#x9879;&#x3002; &#x5728;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;<code>.container</code> &#x5C31;&#x662F;&#x662F; grid container&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item item-1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item item-2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item item-3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="grid-item">Grid Item</h3>
+<p>Grid &#x5BB9;&#x5668;&#x7684;&#x5B69;&#x5B50;&#xFF08;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#xFF09;&#x3002;&#x4E0B;&#x9762;&#x7684; <code>.item</code> &#x5143;&#x7D20;&#x5C31;&#x662F; grid item&#xFF0C;&#x4F46; <code>.sub-item</code>&#x4E0D;&#x662F;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span> 
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sub-item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h3 id="grid-line">Grid Line</h3>
+<p>&#x8FD9;&#x4E2A;&#x5206;&#x754C;&#x7EBF;&#x7EC4;&#x6210;&#x7F51;&#x683C;&#x7ED3;&#x6784;&#x3002; &#x5B83;&#x4EEC;&#x65E2;&#x53EF;&#x4EE5;&#x662F;&#x5782;&#x76F4;&#x7684;&#xFF08;&#x201C;column grid lines&#x201D;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x6C34;&#x5E73;&#x7684;&#xFF08;&#x201C;row grid lines&#x201D;&#xFF09;&#xFF0C;&#x5E76;&#x4F4D;&#x4E8E;&#x884C;&#x6216;&#x5217;&#x7684;&#x4EFB;&#x4E00;&#x4FA7;&#x3002; &#x4E0B;&#x9762;&#x4F8B;&#x4E2D;&#x7684;&#x9EC4;&#x7EBF;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5217;&#x7F51;&#x683C;&#x7EBF;&#x3002;</p>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/48497835.jpg" alt=""></p>
+<h3 id="grid-track">Grid Track</h3>
+<p>&#x4E24;&#x4E2A;&#x76F8;&#x90BB;&#x7F51;&#x683C;&#x7EBF;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x95F4;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x4EEC;&#x60F3;&#x8C61;&#x6210;&#x7F51;&#x683C;&#x7684;&#x5217;&#x6216;&#x884C;&#x3002; &#x4E0B;&#x9762;&#x662F;&#x7B2C;&#x4E8C;&#x884C;&#x548C;&#x7B2C;&#x4E09;&#x884C;&#x7F51;&#x683C;&#x7EBF;&#x4E4B;&#x95F4;&#x7684;&#x7F51;&#x683C;&#x8F68;&#x9053;&#x3002;</p>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/44840078.jpg" alt=""></p>
+<h3 id="grid-cell">Grid Cell</h3>
+<p>&#x4E24;&#x4E2A;&#x76F8;&#x90BB;&#x7684;&#x884C;&#x548C;&#x4E24;&#x4E2A;&#x76F8;&#x90BB;&#x7684;&#x5217;&#x7F51;&#x683C;&#x7EBF;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x95F4;&#x3002;&#x5B83;&#x662F;&#x7F51;&#x683C;&#x7684;&#x4E00;&#x4E2A;&#x201C;&#x5355;&#x5143;&#x201D;&#x3002; &#x4E0B;&#x9762;&#x662F;&#x884C;&#x7F51;&#x683C;&#x7EBF;1&#x548C;2&#x4E4B;&#x95F4;&#x4EE5;&#x53CA;&#x5217;&#x7F51;&#x683C;&#x7EBF;2&#x548C;3&#x7684;&#x7F51;&#x683C;&#x5355;&#x5143;&#x3002;</p>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/38456584.jpg" alt=""></p>
+<h3 id="grid-area">Grid Area</h3>
+<p>&#x56DB;&#x4E2A;&#x7F51;&#x683C;&#x7EBF;&#x5305;&#x56F4;&#x7684;&#x603B;&#x7A7A;&#x95F4;&#x3002; &#x7F51;&#x683C;&#x533A;&#x57DF;&#x53EF;&#x4EE5;&#x7531;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x7F51;&#x683C;&#x5355;&#x5143;&#x7EC4;&#x6210;&#x3002; &#x4E0B;&#x9762;&#x662F;&#x884C;&#x7F51;&#x683C;&#x7EBF;1&#x548C;3&#x4EE5;&#x53CA;&#x5217;&#x7F51;&#x683C;&#x7EBF;1&#x548C;3&#x4E4B;&#x95F4;&#x7684;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x3002;</p>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/38612829.jpg" alt=""></p>
+<h2 id="grid-&#x5C5E;&#x6027;&#x5217;&#x8868;">Grid &#x5C5E;&#x6027;&#x5217;&#x8868;</h2>
+<p>Grid Container &#x7684;&#x5168;&#x90E8;&#x5C5E;&#x6027;</p>
+<ul>
+<li>display</li>
+<li>grid-template-columns</li>
+<li>grid-template-rows</li>
+<li>grid-template-areas</li>
+<li>grid-template</li>
+<li>grid-column-gap</li>
+<li>grid-row-gap</li>
+<li>grid-gap</li>
+<li>justify-items</li>
+<li>align-items</li>
+<li>justify-content</li>
+<li>align-content</li>
+<li>grid-auto-columns</li>
+<li>grid-auto-rows</li>
+<li>grid-auto-flow</li>
+<li>grid</li>
+</ul>
+<p>Grid Items &#x7684;&#x5168;&#x90E8;&#x5C5E;&#x6027;</p>
+<ul>
+<li>grid-column-start</li>
+<li>grid-column-end</li>
+<li>grid-row-start</li>
+<li>grid-row-end</li>
+<li>grid-column</li>
+<li>grid-row</li>
+<li>grid-area</li>
+<li>justify-self</li>
+<li>align-self</li>
+</ul>
+<h2 id="&#x7236;&#x5BB9;&#x5668;grid-container&#x7684;&#x5C5E;&#x6027;">&#x7236;&#x5BB9;&#x5668;(Grid Container)&#x7684;&#x5C5E;&#x6027;</h2>
+<h3 id="display">display</h3>
+<p>&#x5C06;&#x5143;&#x7D20;&#x5B9A;&#x4E49;&#x4E3A; grid contaienr&#xFF0C;&#x5E76;&#x4E3A;&#x5176;&#x5185;&#x5BB9;&#x5EFA;&#x7ACB;&#x65B0;&#x7684;&#x7F51;&#x683C;&#x683C;&#x5F0F;&#x5316;&#x4E0A;&#x4E0B;&#x6587;(grid formatting context)&#x3002;</p>
+<p>&#x503C;:</p>
+<ul>
+<li><strong>grid</strong> - &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5757;&#x7EA7;(block-level)&#x7F51;&#x683C;</li>
+<li><strong>inline-grid</strong> - &#x751F;&#x6210;&#x4E00;&#x4E2A;&#x884C;&#x7EA7;(inline-level)&#x7F51;&#x683C;</li>
+<li><strong>subgrid</strong> - &#x5982;&#x679C;&#x4F60;&#x7684; grid container &#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A; grid item&#xFF08;&#x5373;,&#x5D4C;&#x5957;&#x7F51;&#x683C;&#xFF09;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x6765;&#x8868;&#x793A;&#x4F60;&#x60F3;&#x4ECE;&#x5B83;&#x7684;&#x7236;&#x8282;&#x70B9;&#x83B7;&#x53D6;&#x5B83;&#x7684;&#x884C;/&#x5217;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x6307;&#x5B9A;&#x5B83;&#x81EA;&#x5DF1;&#x7684;&#x5927;&#x5C0F;&#x3002;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: grid | inline-grid | subgrid;
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;<code>column</code>, <code>float</code>, <code>clear</code>, &#x4EE5;&#x53CA; <code>vertical-align</code> &#x5BF9;&#x4E00;&#x4E2A; grid container &#x6CA1;&#x6709;&#x5F71;&#x54CD;</p>
+<h3 id="grid-template-columns--grid-template-rows">grid-template-columns / grid-template-rows</h3>
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x7A7A;&#x683C;&#x5206;&#x9694;&#x7684;&#x591A;&#x4E2A;&#x503C;&#x6765;&#x5B9A;&#x4E49;&#x7F51;&#x683C;&#x7684;&#x5217;&#x548C;&#x884C;&#x3002;&#x8FD9;&#x4E9B;&#x503C;&#x8868;&#x793A;&#x8F68;&#x9053;&#x5927;&#x5C0F;(track size)&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x683C;&#x4EE3;&#x8868;&#x8868;&#x683C;&#x7EBF;(grid line)&#x3002;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: &lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;
+  <span class="hljs-attribute">grid-template-rows</span>: &lt;track-size&gt; ... | &lt;line-name&gt; &lt;track-size&gt; ...;
+}
+</code></pre>
+<p>&#x4F8B;&#x5B50;:</p>
+<p>(&#x5982;&#x679C;&#x672A;&#x663E;&#x793A;&#x7684;&#x7ED9;&#x7F51;&#x683C;&#x7EBF;&#x547D;&#x540D;)&#xFF0C;&#x8F68;&#x9053;&#x503C;&#x4E4B;&#x95F4;&#x4EC5;&#x4EC5;&#x6709;&#x7A7A;&#x683C;&#x65F6;&#xFF0C;&#x7F51;&#x683C;&#x7EBF;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x5206;&#x914D;&#x6570;&#x5B57;&#x540D;&#x79F0;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">40px</span> <span class="hljs-number">50px</span> auto <span class="hljs-number">50px</span> <span class="hljs-number">40px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">25%</span> <span class="hljs-number">100px</span> auto;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/55281623.jpg" alt=""></p>
+<p>&#x4F46;&#x4F60;&#x53EF;&#x4EE5;&#x7ED9;&#x7F51;&#x683C;&#x7EBF;&#x6307;&#x5B9A;&#x786E;&#x5207;&#x7684;&#x547D;&#x540D;&#x3002; &#x6CE8;&#x610F;&#x4E2D;&#x62EC;&#x53F7;&#x91CC;&#x7684;&#x7F51;&#x683C;&#x7EBF;&#x547D;&#x540D;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: [first] <span class="hljs-number">40px</span> [line2] <span class="hljs-number">50px</span> [line3] auto [col4-start] <span class="hljs-number">50px</span> [five] <span class="hljs-number">40px</span> [end];
+  <span class="hljs-attribute">grid-template-rows</span>: [row1-start] <span class="hljs-number">25%</span> [row1-end] <span class="hljs-number">100px</span> [third-line] auto [last-line];
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/1314820.jpg" alt=""></p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x4E00;&#x4E2A;&#x7F51;&#x683C;&#x7EBF;&#x53EF;&#x4EE5;&#x6709;&#x4E0D;&#x6B62;&#x4E00;&#x4E2A;&#x540D;&#x5B57;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8FD9;&#x91CC;&#x7B2C;2&#x6761;&#x7F51;&#x683C;&#x7EBF;&#x6709;&#x4E24;&#x4E2A;&#x540D;&#x5B57;&#xFF1A;row1-end &#x548C; row2-start&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-rows</span>: [row1-start] <span class="hljs-number">25%</span> [row1-end row2-start] <span class="hljs-number">25%</span> [row2-end];
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x5B9A;&#x4E49;&#x4E2D;&#x5305;&#x542B;&#x91CD;&#x590D;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>repeat()</code> &#x7B26;&#x53F7;&#x6765;&#x7B80;&#x5316;&#x5199;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(3, 20px [col-start]) <span class="hljs-number">5%</span>;
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x5199;&#x6CD5;&#x548C;&#x4E0B;&#x9762;&#x7B49;&#x4EF7;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">20px</span> [col-start] <span class="hljs-number">20px</span> [col-start] <span class="hljs-number">20px</span> [col-start] <span class="hljs-number">5%</span>;
+}
+</code></pre>
+<p>&#x201C;fr&#x201D;&#x5355;&#x4F4D;&#x5141;&#x8BB8;&#x60A8;&#x5C06;&#x8F68;&#x9053;&#x5927;&#x5C0F;&#x8BBE;&#x7F6E;&#x4E3A;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x81EA;&#x7531;&#x7A7A;&#x95F4;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x3002; &#x4F8B;&#x5982;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4F1A;&#x5C06;&#x6BCF;&#x4E2A; grid item &#x4E3A; grid container &#x5BBD;&#x5EA6;&#x7684;&#x4E09;&#x5206;&#x4E4B;&#x4E00;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;
+}
+</code></pre>
+<p>&#x81EA;&#x7531;&#x7A7A;&#x95F4;&#x662F;&#x5728;&#x6392;&#x9664;&#x6240;&#x6709;&#x4E0D;&#x53EF;&#x4F38;&#x7F29;&#x7684; grid item &#x4E4B;&#x540E;&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x7684;&#x3002; &#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;fr&#x5355;&#x4F4D;&#x53EF;&#x7528;&#x7684;&#x81EA;&#x7531;&#x7A7A;&#x95F4;&#x603B;&#x91CF;&#x4E0D;&#x5305;&#x62EC;50px:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr <span class="hljs-number">50px</span> <span class="hljs-number">1</span>fr <span class="hljs-number">1</span>fr;
+}
+</code></pre>
+<h3 id="grid-template-areas">grid-template-areas</h3>
+<p>&#x901A;&#x8FC7;&#x5F15;&#x7528; <code>grid-area</code>&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x7684;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x540D;&#x79F0;&#x6765;&#x5B9A;&#x4E49;&#x7F51;&#x683C;&#x6A21;&#x677F;&#x3002; &#x91CD;&#x590D;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x540D;&#x79F0;&#x5BFC;&#x81F4;&#x5185;&#x5BB9;&#x6269;&#x5C55;&#x5230;&#x8FD9;&#x4E9B;&#x5355;&#x5143;&#x683C;&#x3002; &#x70B9;&#x53F7;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x7A7A;&#x5355;&#x5143;&#x683C;&#x3002; &#x8BED;&#x6CD5;&#x672C;&#x8EAB;&#x63D0;&#x4F9B;&#x4E86;&#x7F51;&#x683C;&#x7ED3;&#x6784;&#x7684;&#x53EF;&#x89C6;&#x5316;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>&lt;grid-area-name&gt;</code> - &#x4F7F;&#x7528; grid-area &#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x7684;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x540D;&#x79F0;</li>
+<li><code>.</code> - &#x70B9;&#x53F7;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x7A7A;&#x7F51;&#x683C;&#x5355;&#x5143;</li>
+<li><strong>none</strong> - &#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x7F51;&#x683C;&#x533A;&#x57DF;</li>
+</ul>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">grid-area</span>: header;
+}
+<span class="hljs-selector-class">.item-b</span> {
+  <span class="hljs-attribute">grid-area</span>: main;
+}
+<span class="hljs-selector-class">.item-c</span> {
+  <span class="hljs-attribute">grid-area</span>: sidebar;
+}
+<span class="hljs-selector-class">.item-d</span> {
+  <span class="hljs-attribute">grid-area</span>: footer;
+}
+
+<span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">50px</span> <span class="hljs-number">50px</span> <span class="hljs-number">50px</span> <span class="hljs-number">50px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: auto;
+  <span class="hljs-attribute">grid-template-areas</span>: 
+    <span class="hljs-string">&quot;header header header header&quot;</span>
+    <span class="hljs-string">&quot;main main . sidebar&quot;</span>
+    <span class="hljs-string">&quot;footer footer footer footer&quot;</span>;
+}
+</code></pre>
+<p>&#x8FD9;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x56DB;&#x5217;&#x5BBD;&#x4E09;&#x884C;&#x9AD8;&#x7684;&#x7F51;&#x683C;&#x3002; &#x6574;&#x4E2A;&#x7B2C;&#x4E00;&#x884C;&#x5C06;&#x7531; <strong>header</strong> &#x533A;&#x57DF;&#x7EC4;&#x6210;&#x3002; &#x4E2D;&#x95F4;&#x4E00;&#x884C;&#x5C06;&#x7531;&#x4E24;&#x4E2A; <strong>main</strong> &#x533A;&#x57DF;&#x3001;&#x4E00;&#x4E2A;&#x7A7A;&#x5355;&#x5143;&#x683C;&#x548C;&#x4E00;&#x4E2A; <strong>sidebar</strong> &#x533A;&#x57DF;&#x7EC4;&#x6210;&#x3002; &#x6700;&#x540E;&#x4E00;&#x884C;&#x662F;<strong>footer</strong>&#x533A;&#x57DF;&#x7EC4;&#x6210;&#x3002;</p>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/45883436.jpg" alt=""></p>
+<p>&#x4F60;&#x7684;&#x58F0;&#x660E;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x90FD;&#x9700;&#x8981;&#x6709;&#x76F8;&#x540C;&#x6570;&#x91CF;&#x7684;&#x5355;&#x5143;&#x683C;&#x3002;</p>
+<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x76F8;&#x90BB;&#x7684;<code>.</code>&#x6765;&#x58F0;&#x660E;&#x5355;&#x4E2A;&#x7A7A;&#x5355;&#x5143;&#x683C;&#x3002; &#x53EA;&#x8981;&#x8FD9;&#x4E9B;&#x70B9;&#x53F7;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x4ED6;&#x4EEC;&#x5C31;&#x4EE3;&#x8868;&#x4E86;&#x4E00;&#x4E2A;&#x5355;&#x4E00;&#x7684;&#x5355;&#x5143;&#x683C;&#x3002;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x4F60;&#x4E0D;&#x662F;&#x5728;&#x7528;&#x8FD9;&#x4E2A;&#x8BED;&#x6CD5;&#x547D;&#x540D;&#x7F51;&#x683C;&#x7EBF;&#xFF0C;&#x800C;&#x662F;&#x5728;&#x547D;&#x540D;&#x533A;&#x57DF;&#x3002; &#x5F53;&#x4F60;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x8BED;&#x6CD5;&#x65F6;&#xFF0C;&#x533A;&#x57DF;&#x4E24;&#x7AEF;&#x7684;&#x7F51;&#x683C;&#x7EBF;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x81EA;&#x52A8;&#x547D;&#x540D;&#x7684;&#x3002; &#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x540D;&#x79F0;&#x662F;foo&#xFF0C;&#x90A3;&#x4E48;&#x533A;&#x57DF;&#x7684;&#x8D77;&#x59CB;&#x7684;&#x884C;&#x7F51;&#x683C;&#x7EBF;&#x548C;&#x5217;&#x7F51;&#x683C;&#x7EBF;&#x540D;&#x79F0;&#x662F; foo-<strong>start</strong>&#xFF0C;&#x5E76;&#x4E14;&#x533A;&#x57DF;&#x7EC8;&#x70B9;&#x7684;&#x884C;&#x7F51;&#x683C;&#x7EBF;&#x548C;&#x5217;&#x7F51;&#x683C;&#x7EBF;&#x540D;&#x79F0;&#x662F; foo-<strong>end</strong>&#x3002; &#x8FD9;&#x610F;&#x5473;&#x7740;&#x67D0;&#x4E9B;&#x7F51;&#x683C;&#x7EBF;&#x53EF;&#x80FD;&#x6709;&#x591A;&#x4E2A;&#x540D;&#x79F0;&#xFF0C;&#x6BD4;&#x5982;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x6700;&#x5DE6;&#x8FB9;&#x7684;&#x4E00;&#x6761;&#x7F51;&#x683C;&#x7EBF;&#x6709;&#x4E09;&#x4E2A;&#x540D;&#x5B57;&#xFF1A;header-start&#xFF0C;main-start &#x548C; footer-start&#x3002;</p>
+<h3 id="grid-template">grid-template</h3>
+<p>&#x5728;&#x5355;&#x4E2A;&#x58F0;&#x660E;&#x4E2D;&#x5B9A;&#x4E49; grid-template-rows&#x3001;grid-template-columns&#x3001;grid-template-areas &#x7684;&#x7B80;&#x5199;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><strong>none</strong> - &#x5C06;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#x90FD;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x521D;&#x59CB;&#x503C;</li>
+<li><strong>subgrid</strong> - &#x628A; grid-template-rows &#x548C; grid-template-columns &#x8BBE;&#x7F6E;&#x4E3A; subgrid, &#x5E76;&#x4E14; grid-template-areas &#x8BBE;&#x7F6E;&#x4E3A;&#x521D;&#x59CB;&#x503C;</li>
+<li><code>grid-template-rows</code> / <code>&lt;grid-template-columns</code> - &#x628A; grid-template-columns &#x548C; grid-template-rows &#x8BBE;&#x7F6E;&#x4E3A;&#x6307;&#x5B9A;&#x503C;, &#x4E0E;&#x6B64;&#x540C;&#x65F6;, &#x8BBE;&#x7F6E; grid-template-areas &#x4E3A; none</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template</span>: none | subgrid | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt;;
+}
+</code></pre>
+<p>&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x66F4;&#x590D;&#x6742;&#x4F46;&#x76F8;&#x5F53;&#x65B9;&#x4FBF;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x6307;&#x5B9A;&#x8FD9;&#x4E09;&#x4E2A;&#x503C;&#x3002; &#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template</span>:
+    [row1-start] <span class="hljs-string">&quot;header header header&quot;</span> <span class="hljs-number">25px</span> [row1-end]
+    [row2-start] <span class="hljs-string">&quot;footer footer footer&quot;</span> <span class="hljs-number">25px</span> [row2-end]
+    / auto <span class="hljs-number">50px</span> auto;
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x7B49;&#x4EF7;&#x4E8E;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-rows</span>: [row1-start] <span class="hljs-number">25px</span> [row1-end row2-start] <span class="hljs-number">25px</span> [row2-end];
+  <span class="hljs-attribute">grid-template-columns</span>: auto <span class="hljs-number">50px</span> auto;
+  <span class="hljs-attribute">grid-template-areas</span>: 
+    <span class="hljs-string">&quot;header header header&quot;</span> 
+    <span class="hljs-string">&quot;footer footer footer&quot;</span>;
+}
+</code></pre>
+<p>&#x7531;&#x4E8E; grid-template &#x4E0D;&#x4F1A;&#x91CD;&#x7F6E;&#x9690;&#x5F0F;&#x7F51;&#x683C;&#x5C5E;&#x6027;&#xFF08;<code>grid-auto-columns</code>&#xFF0C;<code>grid-auto-rows</code>&#x548C;<code>grid-auto-flow</code>&#xFF09;&#xFF0C;&#x800C;&#x8FD9;&#x53EF;&#x80FD;&#x662F;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x4F60;&#x60F3;&#x8981;&#x505A;&#x7684;&#x3002;&#x56E0;&#x6B64;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>grid</code>&#x5C5E;&#x6027;&#x6765;&#x4EE3;&#x66FF;<code>grid-template</code>&#x3002;</p>
+<h3 id="grid-column-gap--grid-row-gap">grid-column-gap / grid-row-gap</h3>
+<p>&#x6307;&#x5B9A;&#x7F51;&#x683C;&#x7EBF;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x5B83;&#x60F3;&#x8C61;&#x4E3A;&#x8BBE;&#x7F6E;&#x5217;/&#x884C;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;&#x7684;&#x5BBD;&#x5EA6;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>line-size</code> - &#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x503C;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-column-gap</span>: &lt;line-size&gt;;
+  <span class="hljs-attribute">grid-row-gap</span>: &lt;line-size&gt;;
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">100px</span> <span class="hljs-number">50px</span> <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">80px</span> auto <span class="hljs-number">80px</span>; 
+  <span class="hljs-attribute">grid-column-gap</span>: <span class="hljs-number">10px</span>;
+  <span class="hljs-attribute">grid-row-gap</span>: <span class="hljs-number">15px</span>;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/406531.jpg" alt=""></p>
+<p>&#x53EA;&#x80FD;&#x5728;&#x5217;/&#x884C;&#x4E4B;&#x95F4;&#x521B;&#x5EFA;&#x7F1D;&#x9699;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x5916;&#x90E8;&#x8FB9;&#x7F18;&#x521B;&#x5EFA;&#x3002;</p>
+<h3 id="grid-gap">grid-gap</h3>
+<p>grid-row-gap &#x548C; grid-column-gap &#x7684;&#x7F29;&#x5199;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-gap</span>: &lt;grid-row-gap&gt; &lt;grid-column-gap&gt;;
+}
+</code></pre>
+<p>Example:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">100px</span> <span class="hljs-number">50px</span> <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">80px</span> auto <span class="hljs-number">80px</span>; 
+  <span class="hljs-attribute">grid-gap</span>: <span class="hljs-number">10px</span> <span class="hljs-number">15px</span>;
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A; grid-row-gap&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E0E; grid-column-gap &#x76F8;&#x540C;&#x7684;&#x503C;&#x3002;</p>
+<h3 id="justify-items">justify-items</h3>
+<p>&#x6CBF;&#x7740;&#x884C;&#x8F74;&#x5BF9;&#x9F50;&#x7F51;&#x683C;&#x5185;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F; align-items, &#x5373;&#x6CBF;&#x7740;&#x5217;&#x8F74;&#x5BF9;&#x9F50;&#xFF09;&#xFF0C;&#x8BE5;&#x503C;&#x9002;&#x7528;&#x4E8E;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x6240;&#x6709;&#x7684; grid items&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><strong>start</strong>: &#x5185;&#x5BB9;&#x4E0E;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x5DE6;&#x7AEF;&#x5BF9;&#x9F50;</li>
+<li><strong>end</strong>: &#x5185;&#x5BB9;&#x4E0E;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x53F3;&#x7AEF;&#x5BF9;&#x9F50;</li>
+<li><strong>center</strong>: &#x5185;&#x5BB9;&#x4F4D;&#x4E8E;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x4E2D;&#x95F4;&#x4F4D;&#x7F6E;</li>
+<li><strong>stretch</strong>: &#x5185;&#x5BB9;&#x5BBD;&#x5EA6;&#x5360;&#x636E;&#x6574;&#x4E2A;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7A7A;&#x95F4;(&#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x503C;)</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-items</span>: start | end | center | stretch;
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-items</span>: start;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/81852061.jpg" alt=""></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span>{
+  <span class="hljs-attribute">justify-items</span>: end;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/57749032.jpg" alt=""></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-items</span>: center;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/73568687.jpg" alt=""></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-items</span>: stretch;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/81147184.jpg" alt=""></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7ED9;&#x5355;&#x4E2A; grid item &#x8BBE;&#x7F6E;<code>justify-self</code>&#x5C5E;&#x6027;&#x6765;&#x8FBE;&#x5230;&#x4E0A;&#x8FF0;&#x6548;&#x679C;&#x3002;</p>
+<h3 id="align-items">align-items</h3>
+<p>&#x6CBF;&#x7740;&#x5217;&#x8F74;&#x5BF9;&#x9F50;grid item &#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x4F7F;&#x7528; justify-items &#x8BBE;&#x7F6E;&#x6CBF;&#x7740;&#x884C;&#x8F74;&#x5BF9;&#x9F50;&#xFF09;&#xFF0C;&#x8BE5;&#x503C;&#x9002;&#x7528;&#x4E8E;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x6240;&#x6709; grid items&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><strong>start</strong>: &#x5185;&#x5BB9;&#x4E0E;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x9876;&#x7AEF;&#x5BF9;&#x9F50;</li>
+<li><strong>end</strong>: &#x5185;&#x5BB9;&#x4E0E;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x5E95;&#x90E8;&#x5BF9;&#x9F50;</li>
+<li><strong>center</strong>: &#x5185;&#x5BB9;&#x4F4D;&#x4E8E;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x5782;&#x76F4;&#x4E2D;&#x5FC3;&#x4F4D;&#x7F6E;</li>
+<li><strong>stretch</strong>: &#x5185;&#x5BB9;&#x9AD8;&#x5EA6;&#x5360;&#x636E;&#x6574;&#x4E2A;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7A7A;&#x95F4;(&#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x503C;)</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-items</span>: start | end | center | stretch;
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-items</span>: start;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/31201904.jpg" alt=""></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-items</span>: end;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/37389909.jpg" alt=""></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-items</span>: center;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/64308393.jpg" alt="Example of align-items set to center"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-items</span>: stretch;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/33767654.jpg" alt="Example of align-items set to stretch"></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7ED9;&#x5355;&#x4E2A; grid item &#x8BBE;&#x7F6E;<code>align-self</code>&#x5C5E;&#x6027;&#x6765;&#x8FBE;&#x5230;&#x4E0A;&#x8FF0;&#x6548;&#x679C;&#x3002;</p>
+<h3 id="justify-content">justify-content</h3>
+<p>&#x6709;&#x65F6;&#xFF0C;&#x7F51;&#x683C;&#x7684;&#x603B;&#x5927;&#x5C0F;&#x53EF;&#x80FD;&#x5C0F;&#x4E8E;&#x5176;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x6240;&#x6709; grid items &#x90FD;&#x4F7F;&#x7528;&#x50CF;px&#x8FD9;&#x6837;&#x7684;&#x975E;&#x5F39;&#x6027;&#x5355;&#x4F4D;&#x6765;&#x8BBE;&#x7F6E;&#x5927;&#x5C0F;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x7F51;&#x683C;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x3002; &#x6B64;&#x5C5E;&#x6027;&#x6CBF;&#x7740;&#x884C;&#x8F74;&#x5BF9;&#x9F50;&#x7F51;&#x683C;&#xFF08;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F; align-content, &#x6CBF;&#x7740;&#x5217;&#x8F74;&#x5BF9;&#x9F50;&#xFF09;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li>start -  &#x7F51;&#x683C;&#x4E0E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x5DE6;&#x8FB9;&#x5BF9;&#x9F50;</li>
+<li>end - &#x7F51;&#x683C;&#x4E0E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x53F3;&#x8FB9;&#x5BF9;&#x9F50;</li>
+<li>center - &#x7F51;&#x683C;&#x4E0E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x4E2D;&#x95F4;&#x5BF9;&#x9F50;</li>
+<li>stretch - &#x8C03;&#x6574;g rid item &#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x8BA9;&#x5BBD;&#x5EA6;&#x586B;&#x5145;&#x6574;&#x4E2A;&#x7F51;&#x683C;&#x5BB9;&#x5668;</li>
+<li>space-around - &#x5728; grid item &#x4E4B;&#x95F4;&#x8BBE;&#x7F6E;&#x5747;&#x7B49;&#x5BBD;&#x5EA6;&#x7684;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#xFF0C;&#x5176;&#x5916;&#x8FB9;&#x7F18;&#x95F4;&#x9699;&#x5927;&#x5C0F;&#x4E3A;&#x4E2D;&#x95F4;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#x5BBD;&#x5EA6;&#x7684;&#x4E00;&#x534A;</li>
+<li>space-between - &#x5728; grid item &#x4E4B;&#x95F4;&#x8BBE;&#x7F6E;&#x5747;&#x7B49;&#x5BBD;&#x5EA6;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#xFF0C;&#x5176;&#x5916;&#x8FB9;&#x7F18;&#x65E0;&#x95F4;&#x9699;</li>
+<li>space-evenly - &#x5728;&#x6BCF;&#x4E2A; grid item &#x4E4B;&#x95F4;&#x8BBE;&#x7F6E;&#x5747;&#x7B49;&#x5BBD;&#x5EA6;&#x7684;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#xFF0C;&#x5305;&#x62EC;&#x5916;&#x8FB9;&#x7F18;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;  
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: start;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-18/16621438.jpg" alt="Example of justify-content set to start"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: end; 
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/46252522.jpg" alt="Example of justify-content set to end"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: center;  
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/31369605.jpg" alt="Example of justify-content set to center"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: stretch; 
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-11/65452171.jpg" alt="Example of justify-content set to stretch"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: space-around;  
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/79036314.jpg" alt="Example of justify-content set to space-around"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: space-between; 
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/36148565.jpg" alt="Example of justify-content set to space-between"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">justify-content</span>: space-evenly;  
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/9095829.jpg" alt="Example of justify-content set to space-evenly"></p>
+<h3 id="align-content">align-content</h3>
+<p>&#x6709;&#x65F6;&#xFF0C;&#x7F51;&#x683C;&#x7684;&#x603B;&#x5927;&#x5C0F;&#x53EF;&#x80FD;&#x5C0F;&#x4E8E;&#x5176;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x4F60;&#x7684;&#x6240;&#x6709; grid items &#x90FD;&#x4F7F;&#x7528;&#x50CF;px&#x8FD9;&#x6837;&#x7684;&#x975E;&#x5F39;&#x6027;&#x5355;&#x4F4D;&#x6765;&#x8BBE;&#x7F6E;&#x5927;&#x5C0F;&#xFF0C;&#x5219;&#x53EF;&#x80FD;&#x53D1;&#x751F;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x6B64;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x5185;&#x7684;&#x7F51;&#x683C;&#x7684;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#x3002; &#x6B64;&#x5C5E;&#x6027;&#x6CBF;&#x7740;&#x5217;&#x8F74;&#x5BF9;&#x9F50;&#x7F51;&#x683C;&#xFF08;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F;  justify-content, &#x5373;&#x6CBF;&#x7740;&#x884C;&#x8F74;&#x5BF9;&#x9F50;&#xFF09;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li>start -  &#x7F51;&#x683C;&#x4E0E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x9876;&#x90E8;&#x5BF9;&#x9F50;</li>
+<li>end - &#x7F51;&#x683C;&#x4E0E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x5E95;&#x90E8;&#x5BF9;&#x9F50;</li>
+<li>center - &#x7F51;&#x683C;&#x4E0E;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x7684;&#x4E2D;&#x95F4;&#x5BF9;&#x9F50;</li>
+<li>stretch - &#x8C03;&#x6574; grid item &#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x8BA9;&#x9AD8;&#x5EA6;&#x586B;&#x5145;&#x6574;&#x4E2A;&#x7F51;&#x683C;&#x5BB9;&#x5668;</li>
+<li>space-around - &#x5728; grid item &#x4E4B;&#x95F4;&#x8BBE;&#x7F6E;&#x5747;&#x7B49;&#x5BBD;&#x5EA6;&#x7684;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#xFF0C;&#x5176;&#x5916;&#x8FB9;&#x7F18;&#x95F4;&#x9699;&#x5927;&#x5C0F;&#x4E3A;&#x4E2D;&#x95F4;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#x5BBD;&#x5EA6;&#x7684;&#x4E00;&#x534A;</li>
+<li>space-between - &#x5728; grid item &#x4E4B;&#x95F4;&#x8BBE;&#x7F6E;&#x5747;&#x7B49;&#x5BBD;&#x5EA6;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#xFF0C;&#x5176;&#x5916;&#x8FB9;&#x7F18;&#x65E0;&#x95F4;&#x9699;</li>
+<li>space-evenly - &#x5728;&#x6BCF;&#x4E2A; grid item &#x4E4B;&#x95F4;&#x8BBE;&#x7F6E;&#x5747;&#x7B49;&#x5BBD;&#x5EA6;&#x7684;&#x7A7A;&#x767D;&#x95F4;&#x9699;&#xFF0C;&#x5305;&#x62EC;&#x5916;&#x8FB9;&#x7F18;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: start | end | center | stretch | space-around | space-between | space-evenly;  
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: start; 
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/9095829.jpg" alt="Example of align-content set to start"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: end; 
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/15060507.jpg" alt="Example of align-content set to end"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: center;  
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/72396881.jpg" alt="Example of align-content set to center"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: stretch; 
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/46794685.jpg" alt="Example of align-content set to stretch"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: space-around;  
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/81192919.jpg" alt="Example of align-content set to space-around"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: space-between; 
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/27437729.jpg" alt="Example of align-content set to space-between"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">align-content</span>: space-evenly;  
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/6825571.jpg" alt="Example of align-content set to space-evenly"></p>
+<h3 id="grid-auto-columns--grid-auto-rows">grid-auto-columns / grid-auto-rows</h3>
+<p>&#x6307;&#x5B9A;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#x7F51;&#x683C;&#x8F68;&#x9053;&#xFF08;&#x53C8;&#x540D;&#x9690;&#x5F0F;&#x7F51;&#x683C;&#x8F68;&#x9053;&#xFF09;&#x7684;&#x5927;&#x5C0F;&#x3002; &#x9690;&#x5F0F;&#x7F51;&#x683C;&#x8F68;&#x9053;&#x5728;&#x4F60;&#x663E;&#x5F0F;&#x7684;&#x5B9A;&#x4F4D;&#x8D85;&#x51FA;&#x6307;&#x5B9A;&#x7F51;&#x683C;&#x8303;&#x56F4;&#x7684;&#x884C;&#x6216;&#x5217;&#xFF08;&#x4F7F;&#x7528; grid-template-rows/grid-template-columns&#xFF09;&#x65F6;&#x88AB;&#x521B;&#x5EFA;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>&lt;track-size&gt;</code> - &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x503C;&#xFF0C;&#x4E00;&#x4E2A;&#x767E;&#x5206;&#x6BD4;&#x503C;&#xFF0C;&#x6216;&#x8005;&#x4E00;&#x4E2A;&#x81EA;&#x7531;&#x7A7A;&#x95F4;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF08;&#x4F7F;&#x7528; fr &#x5355;&#x4F4D;&#xFF09;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-auto-columns</span>: &lt;track-size&gt; ...;
+  <span class="hljs-attribute">grid-auto-rows</span>: &lt;track-size&gt; ...;
+}
+</code></pre>
+<p>&#x4E3A;&#x4E86;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x9690;&#x5F0F;&#x7F51;&#x683C;&#x8F68;&#x9053;&#xFF0C;&#x601D;&#x8003;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">60px</span> <span class="hljs-number">60px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">90px</span> <span class="hljs-number">90px</span>
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/90644000.jpg" alt="Example of 2 x 2 grid"></p>
+<p>&#x8FD9;&#x91CC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A; 2x2&#x7684;&#x7F51;&#x683C;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x73B0;&#x5728;&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x4F7F;&#x7528; grid-column &#x548C; grid-row &#x6765;&#x5B9A;&#x4F4D;&#x4F60;&#x7684;&#x7F51;&#x683C;&#x9879;&#x76EE;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span> / <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">2</span> / <span class="hljs-number">3</span>;
+}
+<span class="hljs-selector-class">.item-b</span> {
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">5</span> / <span class="hljs-number">6</span>;
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">2</span> / <span class="hljs-number">3</span>;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/38445302.jpg" alt="Example of implicit tracks"></p>
+<p>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6307;&#x5B9A; .item-b&#x5F00;&#x59CB;&#x4E8E;&#x5217;&#x7F51;&#x683C;&#x7EBF; 5 &#x5E76;&#x7ED3;&#x675F;&#x4E8E;&#x5728;&#x5217;&#x7F51;&#x683C;&#x7EBF; 6&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x5E76;&#x672A;&#x5B9A;&#x4E49;&#x5217;&#x7F51;&#x683C;&#x7EBF; 5 &#x6216; 6&#x3002;&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5F15;&#x7528;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x7F51;&#x683C;&#x7EBF;&#xFF0C;&#x5BBD;&#x5EA6;&#x4E3A;0&#x7684;&#x9690;&#x5F0F;&#x8F68;&#x9053;&#x7684;&#x5C31;&#x4F1A;&#x88AB;&#x521B;&#x5EFA;&#x7528;&#x4E0E;&#x586B;&#x8865;&#x95F4;&#x9699;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; grid-auto-columns &#x548C; grid-auto-rows&#x5C5E;&#x6027;&#x6765;&#x6307;&#x5B9A;&#x8FD9;&#x4E9B;&#x9690;&#x5F0F;&#x8F68;&#x9053;&#x7684;&#x5BBD;&#x5EA6;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-auto-columns</span>: <span class="hljs-number">60px</span>;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/33573866.jpg" alt="Example of implicit tracks"></p>
+<h3 id="grid-auto-flow">grid-auto-flow</h3>
+<p>&#x5982;&#x679C;&#x4F60;&#x5B58;&#x5728;&#x6CA1;&#x6709;&#x663E;&#x793A;&#x6307;&#x660E;&#x653E;&#x7F6E;&#x5728;&#x7F51;&#x683C;&#x4E0A;&#x7684; grid item&#xFF0C;&#x5219;&#x81EA;&#x52A8;&#x653E;&#x7F6E;&#x7B97;&#x6CD5;&#x4F1A;&#x81EA;&#x52A8;&#x653E;&#x7F6E;&#x8FD9;&#x4E9B;&#x9879;&#x76EE;&#x3002; &#x800C;&#x8BE5;&#x5C5E;&#x6027;&#x5219;&#x7528;&#x4E8E;&#x63A7;&#x5236;&#x81EA;&#x52A8;&#x5E03;&#x5C40;&#x7B97;&#x6CD5;&#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li>row - &#x544A;&#x8BC9;&#x81EA;&#x52A8;&#x5E03;&#x5C40;&#x7B97;&#x6CD5;&#x4F9D;&#x6B21;&#x586B;&#x5145;&#x6BCF;&#x884C;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x884C;</li>
+<li>column - &#x544A;&#x8BC9;&#x81EA;&#x52A8;&#x5E03;&#x5C40;&#x7B97;&#x6CD5;&#x4F9D;&#x6B21;&#x586B;&#x5145;&#x6BCF;&#x5217;&#xFF0C;&#x6839;&#x636E;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x65B0;&#x5217;</li>
+<li>dense - &#x544A;&#x8BC9;&#x81EA;&#x52A8;&#x5E03;&#x5C40;&#x7B97;&#x6CD5;&#xFF0C;&#x5982;&#x679C;&#x540E;&#x9762;&#x51FA;&#x73B0;&#x8F83;&#x5C0F;&#x7684; grid item&#xFF0C;&#x5219;&#x5C1D;&#x8BD5;&#x5728;&#x7F51;&#x683C;&#x4E2D;&#x586B;&#x5145;&#x7A7A;&#x6D1E;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-auto-flow</span>: row | column | row dense | column dense
+}
+</code></pre>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;<code>dense</code> &#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x60A8;&#x7684; grid item &#x4E71;&#x5E8F;&#x3002;</p>
+<p>&#x4E3E;&#x4F8B;&#xFF0C; &#x8003;&#x8651;&#x5982;&#x4E0B; HTML&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item-a&quot;</span>&gt;</span>item-a<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item-b&quot;</span>&gt;</span>item-b<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item-c&quot;</span>&gt;</span>item-c<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item-d&quot;</span>&gt;</span>item-d<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;item-e&quot;</span>&gt;</span>item-e<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+</code></pre>
+<p>&#x4F60;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x6709;5&#x5217;&#x548C;2&#x884C;&#x7684;&#x7F51;&#x683C;&#xFF0C;&#x5E76;&#x5C06; grid-auto-flow &#x8BBE;&#x7F6E;&#x4E3A; row&#xFF08;&#x8FD9;&#x4E5F;&#x662F;&#x9ED8;&#x8BA4;&#x503C;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">60px</span> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">30px</span> <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">grid-auto-flow</span>: row;
+}
+</code></pre>
+<p>&#x5F53;&#x628A; grid item &#x653E;&#x5728;&#x7F51;&#x683C;&#x4E0A;&#x65F6;&#xFF0C;&#x4F60;&#x53EA;&#x628A;&#x5176;&#x4E2D;&#x4E24;&#x4E2A;&#x8BBE;&#x7F6E;&#x4E86;&#x56FA;&#x5B9A;&#x7684;&#x4F4D;&#x7F6E;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / <span class="hljs-number">3</span>;
+}
+<span class="hljs-selector-class">.item-e</span> {
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">5</span>;
+  <span class="hljs-attribute">grid-row</span>: <span class="hljs-number">1</span> / <span class="hljs-number">3</span>;
+}
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5C06; grid-auto-flow &#x8BBE;&#x7F6E;&#x4E3A;row&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x7684;grid&#x5C31;&#x50CF;&#x8FD9;&#x6837;&#x3002; &#x6CE8;&#x610F;&#x89C2;&#x5BDF;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x505A;&#x8BBE;&#x7F6E;&#x7684;&#x4E09;&#x4E2A;&#x9879;&#x76EE;&#xFF08;item-b&#xFF0C;item-c&#x548C;item-d&#xFF09;&#x662F;&#x5982;&#x4F55;&#x5728;&#x5269;&#x4F59;&#x7684;&#x884C;&#x6C34;&#x5E73;&#x6446;&#x653E;&#x4F4D;&#x7F6E;&#x7684;&#xFF1A;</p>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/92242678.jpg" alt="Example of grid-auto-flow set to row"></p>
+<p>&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06; grid-auto-flow &#x8BBE;&#x7F6E;&#x4E3A; column&#xFF0C;&#x5219; item-b&#xFF0C;item-c &#x548C; item-d &#x4EE5;&#x5217;&#x7684;&#x987A;&#x5E8F;&#x4E0A;&#x4E0B;&#x6446;&#x653E;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: grid;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">60px</span> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span> <span class="hljs-number">60px</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">30px</span> <span class="hljs-number">30px</span>;
+  <span class="hljs-attribute">grid-auto-flow</span>: column;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/55339887.jpg" alt="Example of grid-auto-flow set to column"></p>
+<h3 id="grid">grid</h3>
+<p>&#x5728;&#x5355;&#x4E2A;&#x5C5E;&#x6027;&#x4E2D;&#x8BBE;&#x7F6E;&#x6240;&#x6709;&#x4EE5;&#x4E0B;&#x5C5E;&#x6027;&#x7684;&#x7B80;&#x5199;&#xFF1A;grid-template-rows&#xFF0C;grid-template-columns&#xFF0C;grid-template-areas&#xFF0C;grid-auto-rows&#xFF0C;grid-auto-columns&#x548C;grid-auto-flow&#x3002; &#x5B83;&#x540C;&#x65F6;&#x4E5F;&#x5C06; sets grid-column-gap &#x548C; grid-row-gap &#x8BBE;&#x7F6E;&#x4E3A;&#x5B83;&#x4EEC;&#x7684;&#x521D;&#x59CB;&#x503C;&#xFF0C;&#x5373;&#x4F7F;&#x5B83;&#x4EEC;&#x4E0D;&#x80FD;&#x88AB;&#x6B64;&#x5C5E;&#x6027;&#x663E;&#x793A;&#x8BBE;&#x7F6E;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li>none - &#x5C06;&#x6240;&#x6709;&#x5B50;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x521D;&#x59CB;&#x503C;</li>
+<li><code>&lt;grid-template-rows&gt;</code> / <code>&lt;grid-template-columns&gt;</code> - &#x5C06; grid-template-rows &#x548C; grid-template-columns &#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x4E3A;&#x6307;&#x5B9A;&#x503C;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x5B50;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x521D;&#x59CB;&#x503C;</li>
+<li><code>&lt;grid-auto-flow&gt;</code> [<code>&lt;grid-auto-rows&gt;</code> [ / <code>&lt;grid-auto-columns&gt;</code>] ] - &#x63A5;&#x53D7;&#x6240;&#x6709;&#x4E0E;grid-auto-flow&#xFF0C;grid-auto-rows&#x548C;grid-auto-columns&#x76F8;&#x540C;&#x7684;&#x503C;&#x3002; &#x5982;&#x679C;&#x7701;&#x7565;grid-auto-columns&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;&#x4E3A;grid-auto-rows&#x6307;&#x5B9A;&#x7684;&#x503C;&#x3002; &#x5982;&#x679C;&#x4E24;&#x8005;&#x90FD;&#x88AB;&#x7701;&#x7565;&#xFF0C;&#x5219;&#x5B83;&#x4EEC;&#x88AB;&#x8BBE;&#x7F6E;&#x4E3A;&#x5B83;&#x4EEC;&#x7684;&#x521D;&#x59CB;&#x503C;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+    <span class="hljs-attribute">grid</span>: none | &lt;grid-template-rows&gt; / &lt;grid-template-columns&gt; | &lt;grid-auto-flow&gt; [&lt;grid-auto-rows&gt; [/ &lt;grid-auto-columns&gt;]];
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<p>&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5199;&#x6CD5;&#x7B49;&#x4EF7;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid</span>: <span class="hljs-number">200px</span> auto / <span class="hljs-number">1</span>fr auto <span class="hljs-number">1</span>fr;
+}
+<span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-rows</span>: <span class="hljs-number">200px</span> auto;
+  <span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-number">1</span>fr auto <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-template-areas</span>: none;
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#x5199;&#x6CD5;&#x7B49;&#x4EF7;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid</span>: column <span class="hljs-number">1</span>fr / auto;
+}
+<span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-auto-flow</span>: column;
+  <span class="hljs-attribute">grid-auto-rows</span>: <span class="hljs-number">1</span>fr;
+  <span class="hljs-attribute">grid-auto-columns</span>: auto;
+}
+</code></pre>
+<p>&#x5B83;&#x4E5F;&#x53EF;&#x7528;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x66F4;&#x590D;&#x6742;&#x4F46;&#x76F8;&#x5F53;&#x65B9;&#x4FBF;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x4E00;&#x6B21;&#x8BBE;&#x7F6E;&#x6240;&#x6709;&#x5185;&#x5BB9;&#x3002; &#x4F60;&#x53EF;&#x4EE5;&#x6307;&#x5B9A; grid-template-areas&#x3001;grid-template-rows &#x4EE5;&#x53CA; grid-template-columns&#xFF0C;&#x5E76;&#x5C06;&#x6240;&#x6709;&#x5176;&#x4ED6;&#x5B50;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;&#x5176;&#x521D;&#x59CB;&#x503C;&#x3002; &#x4F60;&#x73B0;&#x5728;&#x6240;&#x505A;&#x7684;&#x662F;&#x5728;&#x5176;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x5185;&#xFF0C;&#x6307;&#x5B9A;&#x7F51;&#x683C;&#x7EBF;&#x540D;&#x79F0;&#x548C;&#x5185;&#x8054;&#x8F68;&#x9053;&#x5927;&#x5C0F;&#x3002; &#x53EF;&#x4EE5;&#x770B;&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid</span>: [row1-start] <span class="hljs-string">&quot;header header header&quot;</span> <span class="hljs-number">1</span>fr [row1-end]
+        [row2-start] <span class="hljs-string">&quot;footer footer footer&quot;</span> <span class="hljs-number">25px</span> [row2-end]
+        / auto <span class="hljs-number">50px</span> auto;
+}
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x7B49;&#x4EF7;&#x4E8E;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">grid-template-areas</span>: 
+    <span class="hljs-string">&quot;header header header&quot;</span>
+    <span class="hljs-string">&quot;footer footer footer&quot;</span>;
+  <span class="hljs-attribute">grid-template-rows</span>: [row1-start] <span class="hljs-number">1</span>fr [row1-end row2-start] <span class="hljs-number">25px</span> [row2-end];
+  <span class="hljs-attribute">grid-template-columns</span>: auto <span class="hljs-number">50px</span> auto;    
+}
+</code></pre>
+<h2 id="&#x5B69;&#x5B50;grid-items&#x7684;&#x5C5E;&#x6027;">&#x5B69;&#x5B50;(Grid Items)&#x7684;&#x5C5E;&#x6027;</h2>
+<h3 id="grid-column-start--grid-column-end--grid-row-start-grid-row-end">grid-column-start / grid-column-end / grid-row-start /grid-row-end</h3>
+<p>&#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x7F51;&#x683C;&#x7EBF;&#x786E;&#x5B9A; grid item &#x5728;&#x7F51;&#x683C;&#x5185;&#x7684;&#x4F4D;&#x7F6E;&#x3002;grid-column-start/grid-row-start &#x5C5E;&#x6027;&#x8868;&#x793A;grid item&#x7684;&#x7F51;&#x683C;&#x7EBF;&#x7684;&#x8D77;&#x59CB;&#x4F4D;&#x7F6E;&#xFF0C;grid-column-end/grid-row-end&#x5C5E;&#x6027;&#x8868;&#x793A;&#x7F51;&#x683C;&#x9879;&#x7684;&#x7F51;&#x683C;&#x7EBF;&#x7684;&#x7EC8;&#x6B62;&#x4F4D;&#x7F6E;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>&lt;line&gt;</code>: &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x6765;&#x6307;&#x4EE3;&#x76F8;&#x5E94;&#x7F16;&#x53F7;&#x7684;&#x7F51;&#x683C;&#x7EBF;&#xFF0C;&#x4E5F;&#x53EF;&#x4F7F;&#x7528;&#x540D;&#x79F0;&#x6307;&#x4EE3;&#x76F8;&#x5E94;&#x547D;&#x540D;&#x7684;&#x7F51;&#x683C;&#x7EBF;</li>
+<li><code>span &lt;number&gt;</code>: &#x7F51;&#x683C;&#x9879;&#x5C06;&#x8DE8;&#x8D8A;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x7F51;&#x683C;&#x8F68;&#x9053;</li>
+<li><code>span &lt;name&gt;</code>: &#x7F51;&#x683C;&#x9879;&#x5C06;&#x8DE8;&#x8D8A;&#x4E00;&#x4E9B;&#x8F68;&#x9053;&#xFF0C;&#x76F4;&#x5230;&#x78B0;&#x5230;&#x6307;&#x5B9A;&#x547D;&#x540D;&#x7684;&#x7F51;&#x683C;&#x7EBF;</li>
+<li>auto: &#x81EA;&#x52A8;&#x5E03;&#x5C40;&#xFF0C; &#x6216;&#x8005;&#x81EA;&#x52A8;&#x8DE8;&#x8D8A;&#xFF0C; &#x6216;&#x8005;&#x8DE8;&#x8D8A;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;&#x8F68;&#x9053;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-column-start</span>: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+  grid-column-end: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+  grid-row-start: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+  grid-row-end: &lt;number&gt; | &lt;name&gt; | span &lt;number&gt; | span &lt;name&gt; | auto
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-column-end</span>: five;
+  <span class="hljs-attribute">grid-row-start</span>: row1-start
+  grid-row-end: <span class="hljs-number">3</span>
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/8301648.jpg" alt="Example of grid-row/column-start/end"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-b</span> {
+  <span class="hljs-attribute">grid-column-start</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attribute">grid-column-end</span>: span col4-start;
+  <span class="hljs-attribute">grid-row-start</span>: <span class="hljs-number">2</span>
+  grid-row-end: span <span class="hljs-number">2</span>
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/35742447.jpg" alt="Example of grid-row/column-start/end"></p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x58F0;&#x660E; grid-column-end / grid-row-end&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8BE5;&#x7F51;&#x683C;&#x9879;&#x5C06;&#x8DE8;&#x8D8A;1&#x4E2A;&#x8F68;&#x9053;&#x3002;</p>
+<p>&#x7F51;&#x683C;&#x9879;&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x91CD;&#x53E0;&#x3002; &#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;z-index&#x6765;&#x63A7;&#x5236;&#x5B83;&#x4EEC;&#x7684;&#x5806;&#x53E0;&#x987A;&#x5E8F;&#x3002;</p>
+<h3 id="grid-column--grid-row">grid-column / grid-row</h3>
+<p>grid-column-start + grid-column-end, &#x548C; grid-row-start + grid-row-end &#x7684;&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>&lt;start-line&gt;</code> / <code>&lt;end-line&gt;</code> - &#x6BCF;&#x4E2A;&#x503C;&#x7684;&#x7528;&#x6CD5;&#x90FD;&#x548C;&#x5C5E;&#x6027;&#x5206;&#x5F00;&#x5199;&#x65F6;&#x7684;&#x7528;&#x6CD5;&#x4E00;&#x6837;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-column</span>: &lt;start-line&gt; / &lt;end-line&gt; | &lt;start-line&gt; / span &lt;value&gt;;
+  <span class="hljs-attribute">grid-row</span>: &lt;start-line&gt; / &lt;end-line&gt; | &lt;start-line&gt; / span &lt;value&gt;;
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-c</span> {
+  <span class="hljs-attribute">grid-column</span>: <span class="hljs-number">3</span> / span <span class="hljs-number">2</span>;
+  <span class="hljs-attribute">grid-row</span>: third-line / <span class="hljs-number">4</span>;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/95036015.jpg" alt="Example of grid-column/grid-row"></p>
+<p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x7ED3;&#x675F;&#x884C;&#x503C;&#xFF0C;&#x5219;&#x8BE5;&#x7F51;&#x683C;&#x9879;&#x9ED8;&#x8BA4;&#x8DE8;&#x8D8A;1&#x4E2A;&#x8F68;&#x9053;&#x3002;</p>
+<h3 id="grid-area">grid-area</h3>
+<p>&#x7ED9; grid item &#x8FDB;&#x884C;&#x547D;&#x540D;&#x4EE5;&#x4FBF;&#x4E8E;&#x4F7F;&#x7528; grid-template-areas &#x5C5E;&#x6027;&#x521B;&#x5EFA;&#x6A21;&#x677F;&#x65F6;&#x6765;&#x8FDB;&#x884C;&#x5F15;&#x7528;&#x3002;&#x53E6;&#x5916;&#x4E5F;&#x53EF;&#x4EE5;&#x505A;&#x4E3A; grid-row-start + grid-column-start + grid-row-end + grid-column-end &#x7684;&#x7B80;&#x5199;&#x5F62;&#x5F0F;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li><code>&lt;name&gt;</code> - &#x4F60;&#x7684;&#x547D;&#x540D;</li>
+<li><code>&lt;row-start&gt;</code> / <code>&lt;column-start&gt;</code> / <code>&lt;row-end&gt;</code> / <code>&lt;column-end&gt;</code> - &#x53EF;&#x4EE5;&#x662F;&#x6570;&#x5B57;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x7F51;&#x683C;&#x7EBF;&#x7684;&#x540D;&#x5B57;</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">grid-area</span>: &lt;name&gt; | &lt;row-start&gt; / &lt;column-start&gt; / &lt;row-end&gt; / &lt;column-end&gt;;
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;:</p>
+<p>&#x7ED9;&#x4E00;&#x4E2A;&#x7F51;&#x683C;&#x9879;&#x547D;&#x540D;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-d</span> {
+  <span class="hljs-attribute">grid-area</span>: header
+}
+</code></pre>
+<p>&#x4F5C;&#x4E3A; grid-row-start + grid-column-start + grid-row-end + grid-column-end &#x7684;&#x7B80;&#x5199;:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-d</span> {
+  <span class="hljs-attribute">grid-area</span>: <span class="hljs-number">1</span> / col4-start / last-line / <span class="hljs-number">6</span>
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/37070111.jpg" alt="Example of grid-area"></p>
+<h3 id="justify-self">justify-self</h3>
+<p>&#x6CBF;&#x7740;&#x884C;&#x8F74;&#x5BF9;&#x9F50;grid item &#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F; align-self, &#x5373;&#x6CBF;&#x5217;&#x8F74;&#x5BF9;&#x9F50;&#xFF09;&#x3002; &#x6B64;&#x5C5E;&#x6027;&#x5BF9;&#x5355;&#x4E2A;&#x7F51;&#x683C;&#x9879;&#x5185;&#x7684;&#x5185;&#x5BB9;&#x751F;&#x6548;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li>start - &#x5C06;&#x5185;&#x5BB9;&#x5BF9;&#x9F50;&#x5230;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x5DE6;&#x7AEF;</li>
+<li>end - &#x5C06;&#x5185;&#x5BB9;&#x5BF9;&#x9F50;&#x5230;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x53F3;&#x7AEF;</li>
+<li>center - &#x5C06;&#x5185;&#x5BB9;&#x5BF9;&#x9F50;&#x5230;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x4E2D;&#x95F4;</li>
+<li>stretch - &#x586B;&#x5145;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x5BBD;&#x5EA6; (&#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x503C;)</li>
+</ul>
+<p>&#x4E3E;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">justify-self</span>: start;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/53670315.jpg" alt="Example of justify-self set to start"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">justify-self</span>: end;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/15608697.jpg" alt="Example of justify-self set to end"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">justify-self</span>: center;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/42777942.jpg" alt="Example of justify-self set to center"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">justify-self</span>: stretch;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/42754838.jpg" alt="Example of justify-self set to stretch"></p>
+<p>&#x8981;&#x4E3A;&#x7F51;&#x683C;&#x4E2D;&#x7684;&#x6240;&#x6709;grid items &#x8BBE;&#x7F6E;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; justify-items &#x5C5E;&#x6027;&#x5728;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x4E0A;&#x8BBE;&#x7F6E;&#x6B64;&#x884C;&#x4E3A;&#x3002;</p>
+<h3 id="align-self">align-self</h3>
+<p>&#x6CBF;&#x7740;&#x5217;&#x8F74;&#x5BF9;&#x9F50;grid item &#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF08;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F;  justify-self, &#x5373;&#x6CBF;&#x884C;&#x8F74;&#x5BF9;&#x9F50;&#xFF09;&#x3002; &#x6B64;&#x5C5E;&#x6027;&#x5BF9;&#x5355;&#x4E2A;&#x7F51;&#x683C;&#x9879;&#x5185;&#x7684;&#x5185;&#x5BB9;&#x751F;&#x6548;&#x3002;</p>
+<p>&#x503C;&#xFF1A;</p>
+<ul>
+<li>start - &#x5C06;&#x5185;&#x5BB9;&#x5BF9;&#x9F50;&#x5230;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x9876;&#x90E8;</li>
+<li>end - &#x5C06;&#x5185;&#x5BB9;&#x5BF9;&#x9F50;&#x5230;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x5E95;&#x90E8;</li>
+<li>center - &#x5C06;&#x5185;&#x5BB9;&#x5BF9;&#x9F50;&#x5230;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x4E2D;&#x95F4;</li>
+<li>stretch - &#x586B;&#x5145;&#x7F51;&#x683C;&#x533A;&#x57DF;&#x7684;&#x9AD8;&#x5EA6; (&#x8FD9;&#x662F;&#x9ED8;&#x8BA4;&#x503C;)</li>
+</ul>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">align-self</span>: start | end | center | stretch;
+}
+</code></pre>
+<p>&#x4E3E;&#x4F8B;:</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">align-self</span>: start;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/67517511.jpg" alt="Example of align-self set to start"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">align-self</span>: end;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/9140938.jpg" alt="Example of align-self set to end"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">align-self</span>: center;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/38240821.jpg" alt="Example of align-self set to center"></p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.item-a</span> {
+  <span class="hljs-attribute">align-self</span>: stretch;
+}
+</code></pre>
+<p><img src="http://cloud.hunger-valley.com/18-1-12/84502177.jpg" alt="Example of align-self set to stretch"></p>
+<p>&#x8981;&#x4E3A;&#x7F51;&#x683C;&#x4E2D;&#x7684;&#x6240;&#x6709;grid items &#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x5BF9;&#x9F50;&#x65B9;&#x5F0F;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;  align-items &#x5C5E;&#x6027;&#x5728;&#x7F51;&#x683C;&#x5BB9;&#x5668;&#x4E0A;&#x8BBE;&#x7F6E;&#x6B64;&#x884C;&#x4E3A;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                
+                <a href="building-a-home-page-with-grid.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 使用 Grid 布局构建网站首页">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"CSS Grid 布局完整指南","level":"1.2.1","depth":2,"next":{"title":"使用 Grid 布局构建网站首页","level":"1.2.2","depth":2,"path":"building-a-home-page-with-grid.md","ref":"building-a-home-page-with-grid.md","articles":[]},"previous":{"title":"Grid 布局","level":"1.2","depth":1,"ref":"","articles":[{"title":"CSS Grid 布局完整指南","level":"1.2.1","depth":2,"path":"a-complete-guide-css-grid-layout.md","ref":"a-complete-guide-css-grid-layout.md","articles":[]},{"title":"使用 Grid 布局构建网站首页","level":"1.2.2","depth":2,"path":"building-a-home-page-with-grid.md","ref":"building-a-home-page-with-grid.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs-2","codepen","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/jirengu/css-you-should-know/"},"search":{},"codepen":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"highlight":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/jirengu/css-you-should-know/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"css you should know","language":"zh-cn","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"a-complete-guide-css-grid-layout.md","mtime":"2018-12-19T03:57:01.179Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-19T04:00:31.594Z"},"basePath":".","book":{"language":"zh-cn"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codepen/embed-codepen.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

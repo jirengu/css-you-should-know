@@ -1,0 +1,640 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Flexbox 学习指南 · css you should know</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs-2/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="輸入並搜尋" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Grid 布局
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="a-complete-guide-css-grid-layout.html">
+            
+                <a href="a-complete-guide-css-grid-layout.html">
+            
+                    
+                    CSS Grid 布局完整指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="building-a-home-page-with-grid.html">
+            
+                <a href="building-a-home-page-with-grid.html">
+            
+                    
+                    使用 Grid 布局构建网站首页
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Flex 布局
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="a-guild-to-flexbox.html">
+            
+                <a href="a-guild-to-flexbox.html">
+            
+                    
+                    Flexbox 学习指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    自定义属性
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="css-custom-properties-the-basics.html">
+            
+                <a href="css-custom-properties-the-basics.html">
+            
+                    
+                    CSS 自定义属性
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本書使用 GitBook 釋出
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Flexbox 学习指南</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="background"><a href="#flexbox-background">Background</a></h3>
+<p>The <code>Flexbox Layout</code> (Flexible Box) module (currently a W3C Last Call Working Draft) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word &quot;flex&quot;).</p>
+<p>The main idea behind the flex layout is to give the container the ability to alter its items&apos; width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow.</p>
+<p>Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).</p>
+<p><strong>Note:</strong> Flexbox layout is most appropriate to the components of an application, and small-scale layouts, while the <a href="http://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Grid</a> layout is intended for larger scale layouts.</p>
+<h3 id="basics--terminology"><a href="#flexbox-basics">Basics &amp; Terminology</a></h3>
+<p>Since flexbox is a whole module and not a single property, it involves a lot of things including its whole set of properties. Some of them are meant to be set on the container (parent element, known as &quot;flex container&quot;) whereas the others are meant to be set on the children (said &quot;flex items&quot;).</p>
+<p>If regular layout is based on both block and inline flow directions, the flex layout is based on &quot;flex-flow directions&quot;. Please have a look at this figure from the specification, explaining the main idea behind the flex layout.</p>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647699_979828.png" alt=""></p>
+<p>Basically, items will be laid out following either the <code>main axis</code> (from <code>main-start</code> to <code>main-end</code>) or the cross axis (from <code>cross-start</code> to <code>cross-end</code>).</p>
+<ul>
+<li><strong>main axis</strong> - The main axis of a flex container is the primary axis along which flex items are laid out. Beware, it is not necessarily horizontal; it depends on the <code>flex-direction</code> property (see below).</li>
+<li><strong>main-start | main-end</strong> - The flex items are placed within the container starting from main-start and going to main-end.</li>
+<li><strong>main size</strong> - A flex item&apos;s width or height, whichever is in the main dimension, is the item&apos;s main size. The flex item&apos;s main size property is either the &#x2018;width&#x2019; or &#x2018;height&#x2019; property, whichever is in the main dimension.</li>
+<li><strong>cross axis</strong> - The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.</li>
+<li><strong>cross-start | cross-end</strong> - Flex lines are filled with items and placed into the container starting on the cross-start side of the flex container and going toward the cross-end side.</li>
+<li><strong>cross size</strong> - The width or height of a flex item, whichever is in the cross dimension, is the item&apos;s cross size. The cross size property is whichever of &#x2018;width&#x2019; or &#x2018;height&#x2019; that is in the cross dimension.</li>
+</ul>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647704_120563.svg" alt=""></p>
+<p>Properties for the Parent  </p>
+<h2 id="flex-container">(flex container)</h2>
+<h4 id="display">display</h4>
+<p>This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.</p>
+<pre><code>.container {
+  display: flex; /* or inline-flex */
+}
+</code></pre><p>Note that CSS columns have no effect on a flex container.</p>
+<h4 id="flex-direction">flex-direction</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647706_137565.svg" alt=""><br>This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns.</p>
+<pre><code>.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+</code></pre><ul>
+<li><code>row</code> (default): left to right in <code>ltr</code>; right to left in <code>rtl</code></li>
+<li><code>row-reverse</code>: right to left in <code>ltr</code>; left to right in <code>rtl</code></li>
+<li><code>column</code>: same as <code>row</code> but top to bottom</li>
+<li><code>column-reverse</code>: same as <code>row-reverse</code> but bottom to top</li>
+</ul>
+<h4 id="flex-wrap">flex-wrap</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647707_315594.svg" alt=""></p>
+<p>By default, flex items will all try to fit onto one line. You can change that and allow the items to wrap as needed with this property.</p>
+<pre><code>.container{
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</code></pre><ul>
+<li><code>nowrap</code> (default): all flex items will be on one line</li>
+<li><code>wrap</code>: flex items will wrap onto multiple lines, from top to bottom.</li>
+<li><code>wrap-reverse</code>: flex items will wrap onto multiple lines from bottom to top.</li>
+</ul>
+<p>There are some <a href="http://css-tricks.com/almanac/properties/f/flex-wrap/" target="_blank">visual demos of <code>flex-wrap</code> here</a>.</p>
+<h4 id="flex-flow-applies-to-parent-flex-container-element">flex-flow (Applies to: parent flex container element)</h4>
+<p>This is a shorthand <code>flex-direction</code> and <code>flex-wrap</code> properties, which together define the flex container&apos;s main and cross axes. Default is <code>row nowrap</code>.</p>
+<pre><code>flex-flow: &lt;&#x2018;flex-direction&#x2019;&gt; || &lt;&#x2018;flex-wrap&#x2019;&gt;
+</code></pre><h4 id="justify-content">justify-content</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647707_348133.svg" alt=""><br>This defines the alignment along the main axis. It helps distribute extra free space left over when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.</p>
+<pre><code>.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+}
+</code></pre><ul>
+<li><code>flex-start</code> (default): items are packed toward the start line</li>
+<li><code>flex-end</code>: items are packed toward to end line</li>
+<li><code>center</code>: items are centered along the line</li>
+<li><code>space-between</code>: items are evenly distributed in the line; first item is on the start line, last item on the end line</li>
+<li><code>space-around</code>: items are evenly distributed in the line with equal space around them. Note that visually the spaces aren&apos;t equal, since all the items have equal space on both sides. The first item will have one unit of space against the container edge, but two units of space between the next item because that next item has its own spacing that applies.</li>
+<li><code>space-evenly</code>: items are distributed so that the spacing between any two items (and the space to the edges) is equal.</li>
+</ul>
+<h4 id="align-items">align-items</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647708_589039.svg" alt=""><br>This defines the default behaviour for how flex items are laid out along the cross axis on the current line. Think of it as the <code>justify-content</code> version for the cross-axis (perpendicular to the main-axis).</p>
+<pre><code>.container {
+  align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><ul>
+<li><code>flex-start</code>: cross-start margin edge of the items is placed on the cross-start line</li>
+<li><code>flex-end</code>: cross-end margin edge of the items is placed on the cross-end line</li>
+<li><code>center</code>: items are centered in the cross-axis</li>
+<li><code>baseline</code>: items are aligned such as their baselines align</li>
+<li><code>stretch</code> (default): stretch to fill the container (still respect min-width/max-width)</li>
+</ul>
+<h4 id="align-content">align-content</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647709_842657.svg" alt=""><br>This aligns a flex container&apos;s lines within when there is extra space in the cross-axis, similar to how <code>justify-content</code> aligns individual items within the main-axis.</p>
+<p><strong>Note:</strong> this property has no effect when there is only one line of flex items.</p>
+<pre><code>.container {
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}
+</code></pre><ul>
+<li><code>flex-start</code>: lines packed to the start of the container</li>
+<li><code>flex-end</code>: lines packed to the end of the container</li>
+<li><code>center</code>: lines packed to the center of the container</li>
+<li><code>space-between</code>: lines evenly distributed; the first line is at the start of the container while the last one is at the end</li>
+<li><code>space-around</code>: lines evenly distributed with equal space around each line</li>
+<li><code>stretch</code> (default): lines stretch to take up the remaining space</li>
+</ul>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647709_719843.svg" alt=""></p>
+<p>Properties for the Children  </p>
+<h2 id="flex-items">(flex items)</h2>
+<h4 id="order">order</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647709_303742.svg" alt=""><br>By default, flex items are laid out in the source order. However, the <code>order</code> property controls the order in which they appear in the flex container.</p>
+<pre><code>.item {
+  order: ; /* default is 0 */
+}
+</code></pre><h4 id="flex-grow">flex-grow</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647710_356758.svg" alt=""><br>This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.</p>
+<p>If all items have <code>flex-grow</code> set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, the remaining space would take up twice as much space as the others (or it will try to, at least).</p>
+<pre><code>.item {
+  flex-grow: ; /* default 0 */
+}
+</code></pre><p>Negative numbers are invalid.</p>
+<h4 id="flex-shrink">flex-shrink</h4>
+<p>This defines the ability for a flex item to shrink if necessary.</p>
+<pre><code>.item {
+  flex-shrink: ; /* default 1 */
+}
+</code></pre><p>Negative numbers are invalid.</p>
+<h4 id="flex-basis">flex-basis</h4>
+<p>This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The <code>auto</code> keyword means &quot;look at my width or height property&quot; (which was temporarily done by the <code>main-size</code> keyword until deprecated). The <code>content</code> keyword means &quot;size it based on the item&apos;s content&quot; - this keyword isn&apos;t well supported yet, so it&apos;s hard to test and harder to know what its brethren <code>max-content</code>, <code>min-content</code>, and <code>fit-content</code> do.</p>
+<pre><code>.item {
+  flex-basis:  | auto; /* default auto */
+}
+</code></pre><p>If set to <code>0</code>, the extra space around content isn&apos;t factored in. If set to <code>auto</code>, the extra space is distributed based on its <code>flex-grow</code> value. <a href="http://www.w3.org/TR/css3-flexbox/images/rel-vs-abs-flex.svg" target="_blank">See this graphic.</a></p>
+<h4 id="flex">flex</h4>
+<p>This is the shorthand for <code>flex-grow,</code> <code>flex-shrink</code> and <code>flex-basis</code> combined. The second and third parameters (<code>flex-shrink</code> and <code>flex-basis</code>) are optional. Default is <code>0 1 auto</code>.</p>
+<pre><code>.item {
+  flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]
+}
+</code></pre><p><strong>It is recommended that you use this shorthand property</strong> rather than set the individual properties. The short hand sets the other values intelligently.</p>
+<h4 id="align-self">align-self</h4>
+<p><img src="http://cloud.hunger-valley.com/upload_1515753647710_347342.svg" alt=""><br>This allows the default alignment (or the one specified by <code>align-items</code>) to be overridden for individual flex items.</p>
+<p>Please see the <code>align-items</code> explanation to understand the available values.</p>
+<pre><code>.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p>Note that <code>float</code>, <code>clear</code> and <code>vertical-align</code> have no effect on a flex item.</p>
+<h3 id="examples">Examples</h3>
+<p>Let&apos;s start with a very very simple example, solving an almost daily problem: perfect centering. It couldn&apos;t be any simpler if you use flexbox.</p>
+<pre><code>.parent {
+  display: flex;
+  height: 300px; /* Or whatever */
+}
+
+.child {
+  width: 100px;  /* Or whatever */
+  height: 100px; /* Or whatever */
+  margin: auto;  /* Magic! */
+}
+</code></pre><p>This relies on the fact a margin set to `auto` in a flex container absorb extra space. So setting a vertical margin of <code>auto</code> will make the item perfectly centered in both axis.</p>
+<p>Now let&apos;s use some more properties. Consider a list of 6 items, all with a fixed dimensions in a matter of aesthetics but they could be auto-sized. We want them to be evenly and nicely distributed on the horizontal axis so that when we resize the browser, everything is fine (without media queries!).</p>
+<pre><code>.flex-container {
+  /* We first create a flex layout context */
+  display: flex;
+
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+
+  /* Then we define how is distributed the remaining space */
+  justify-content: space-around;
+}
+</code></pre><p>Done. Everything else is just some styling concern. Below is a pen featuring this example. Be sure to go to CodePen and try resizing your windows to see what happens.</p>
+<p>See the Pen <a href="http://codepen.io/team/css-tricks/pen/EKEYob/" target="_blank">Demo Flexbox 1</a> by CSS-Tricks (<a href="http://codepen.io/css-tricks" target="_blank">@css-tricks</a>) on <a href="http://codepen.io" target="_blank">CodePen</a>.</p>
+<p>Let&apos;s try something else. Imagine we have a right-aligned navigation on the very top of our website, but we want it to be centered on medium-sized screens and single-columned on small devices. Easy enough.</p>
+<pre><code>/* Large */
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  /* This aligns items to the end line on main-axis */
+  justify-content: flex-end;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .navigation {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
+}
+</code></pre><p>See the Pen <a href="http://codepen.io/team/css-tricks/pen/YqaKYR/" target="_blank">Demo Flexbox 2</a> by CSS-Tricks (<a href="http://codepen.io/css-tricks" target="_blank">@css-tricks</a>) on <a href="http://codepen.io" target="_blank">CodePen</a>.</p>
+<p>Let&apos;s try something even better by playing with flex items flexibility! What about a mobile-first 3-columns layout with full-width header and footer. And independent from source order.</p>
+<pre><code>.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* We tell all items to be 100% width, via flex-basis */
+.wrapper &gt; * {
+  flex: 1 100%;
+}
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. article
+ * 3. aside 1
+ * 4. aside 2
+ * 5. footer
+ */
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+  /* We tell both sidebars to share a row */
+  .aside { flex: 1 auto; }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+  /* We invert order of first sidebar and main
+   * And tell the main element to take twice as much width as the other two sidebars 
+   */
+  .main { flex: 2 0px; }
+  .aside-1 { order: 1; }
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+</code></pre><p>See the Pen <a href="http://codepen.io/chriscoyier/pen/vWEMWw/" target="_blank">Demo Flexbox 3</a> by Chris Coyier (<a href="http://codepen.io/chriscoyier" target="_blank">@chriscoyier</a>) on <a href="http://codepen.io" target="_blank">CodePen</a>.</p>
+<h3 id="prefixing-flexbox"><a href="#flexbox-sass">Prefixing Flexbox</a></h3>
+<p>Flexbox requires some vendor prefixing to support the most browsers possible. It doesn&apos;t just include prepending properties with the vendor prefix, but there are actually entirely different property and value names. This is because the Flexbox spec has changed over time, creating an <a href="http://css-tricks.com/old-flexbox-and-new-flexbox/" target="_blank">&quot;old&quot;, &quot;tweener&quot;, and &quot;new&quot;</a> versions.</p>
+<p>Perhaps the best way to handle this is to write in the new (and final) syntax and run your CSS through <a href="http://css-tricks.com/autoprefixer/" target="_blank">Autoprefixer</a>, which handles the fallbacks very well.</p>
+<p>Alternatively, here&apos;s a Sass @mixin to help with some of the prefixing, which also gives you an idea of what kind of things need to be done:</p>
+<pre><code>@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+.wrapper {
+  @include flexbox();
+}
+
+.item {
+  @include flex(1 200px);
+  @include order(2);
+}
+</code></pre><h3 id="related-properties"><a href="#flexbox-related">Related Properties</a></h3>
+<ul>
+<li><a href="css-tricks.com/snippets/css/complete-guide-grid">A Complete Guide to Grid</a></li>
+<li>Almanac entries on Grid properties, like <a href="http://css-tricks.com/almanac/properties/g/grid-row-column/" target="_blank">grid-row / grid-column</a></li>
+</ul>
+<h3 id="other-resources"><a href="#flexbox-resources">Other Resources</a></h3>
+<ul>
+<li><a href="http://www.w3.org/TR/css3-flexbox/" target="_blank">Flexbox in the CSS specifications</a></li>
+<li><a href="http://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_flexible_boxes" target="_blank">Flexbox at MDN</a></li>
+<li><a href="http://dev.opera.com/articles/view/flexbox-basics/" target="_blank">Flexbox at Opera</a></li>
+<li><a href="http://weblog.bocoup.com/dive-into-flexbox/" target="_blank">Diving into Flexbox by Bocoup</a></li>
+<li><a href="using-flexbox">Mixing syntaxes for best browser support on CSS-Tricks</a></li>
+<li><a href="http://www.alsacreations.com/tuto/lire/1493-css3-flexbox-layout-module.html" target="_blank">Flexbox by Raphael Goetter (FR)</a></li>
+<li><a href="http://bennettfeely.com/flexplorer/" target="_blank">Flexplorer by Bennett Feely</a></li>
+</ul>
+<h3 id="bugs"><a href="#flexbox-bugs">Bugs</a></h3>
+<p>Flexbox is certainly not without its bugs. The best collection of them I&apos;ve seen is Philip Walton and Greg Whitworth&apos;s <a href="http://github.com/philipwalton/flexbugs" target="_blank">Flexbugs</a>. It&apos;s an open source place to track all of them, so I think it&apos;s best to just link to that.</p>
+<h3 id="browser-support">Browser Support</h3>
+<p>Broken up by &quot;version&quot; of flexbox:</p>
+<ul>
+<li>(new) means the recent syntax from the specification (e.g. <code>display: flex;</code>)</li>
+<li>(tweener) means an odd unofficial syntax from 2011 (e.g. <code>display: flexbox;</code>)</li>
+<li>(old) means the old syntax from 2009 (e.g. <code>display: box;</code>)</li>
+</ul>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Firefox</p>
+<p>Opera</p>
+<p>IE</p>
+<p>Android</p>
+<p>iOS</p>
+<p>20- (old)<br>21+ (new)</p>
+<p>3.1+ (old)<br>6.1+ (new)</p>
+<p>2-21 (old)<br>22+ (new)</p>
+<p>12.1+ (new)</p>
+<p>10 (tweener)<br>11+ (new)</p>
+<p>2.1+ (old)<br>4.4+ (new)</p>
+<p>3.2+ (old)<br>7.1+ (new)</p>
+<p>Blackberry browser 10+ supports the new syntax.</p>
+<p>For more informations about how to mix syntaxes in order to get the best browser support, please refer to <a href="using-flexbox">this article (CSS-Tricks)</a> or <a href="http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/#fallbacks" target="_blank">this article (DevOpera)</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Flexbox 学习指南","level":"1.3.1","depth":2,"next":{"title":"自定义属性","level":"1.4","depth":1,"ref":"","articles":[{"title":"CSS 自定义属性","level":"1.4.1","depth":2,"path":"css-custom-properties-the-basics.md","ref":"css-custom-properties-the-basics.md","articles":[]}]},"previous":{"title":"Flex 布局","level":"1.3","depth":1,"ref":"","articles":[{"title":"Flexbox 学习指南","level":"1.3.1","depth":2,"path":"a-guild-to-flexbox.md","ref":"a-guild-to-flexbox.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["edit-link","theme-vuejs-2","codepen","-fontsettings","github"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/jirengu/css-you-should-know/"},"search":{},"codepen":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"theme-vuejs-2":{},"highlight":{},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/jirengu/css-you-should-know/tree/master/docs"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"css you should know","language":"zh-cn","links":{"sharing":{"facebook":false,"twitter":false}},"gitbook":"*"},"file":{"path":"a-guild-to-flexbox.md","mtime":"2018-12-19T03:57:01.180Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-19T04:00:31.594Z"},"basePath":".","book":{"language":"zh-cn"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codepen/embed-codepen.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+
